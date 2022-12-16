@@ -1,0 +1,94 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-no-nav.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+        <div class="mnp-login-wrapper">
+
+
+            <!--Start of stepper-->
+            <div class="container">
+                <section class="step-indicator">
+                    <div class="step step1 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Identify</p>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step2 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Verify</p>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step3 active">
+                        <div class="step-icon">3</div>
+                        <p>Create</p>
+                    </div>
+                </section>
+            </div>
+            <!--End of stepper-->
+
+
+            <h1 class="nhsuk-heading-xs mnp-heading-block">Step 3 - Create your new account</h1>
+            <div class="mnp-login-content-block">
+                <p>Please create your own username and password.</p>
+                <form action="complete" method="post" class="form">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label mnp-label-default" for="username">
+                                    Username
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="nino" name="nino" type="text"
+                                    placeholder="Enter your new username">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                           
+                        </div>
+                    </div>
+
+                        <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+                            Complete Registration
+                        </button>
+
+                        <button class="nhsuk-button mnp-btn-primary-default">
+                            Exit
+                        </button>
+
+                </form>
+            </div>
+
+        </div>
+
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}

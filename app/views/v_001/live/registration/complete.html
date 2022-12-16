@@ -1,0 +1,78 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-no-nav.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+        <div class="mnp-login-wrapper">
+
+
+            <!--Start of stepper-->
+            <div class="container">
+                <section class="step-indicator">
+                    <div class="step step1 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Identify</p>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step2 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Verify</p>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step3 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Create</p>
+                    </div>
+                </section>
+            </div>
+            <!--End of stepper-->
+
+
+            <h1 class="nhsuk-heading-xs mnp-heading-block">Registration Complete!</h1>
+            <div class="mnp-login-content-block">
+                <p>You will receive an activation link to your email address. Please click the link provided in the email to complete the registration process. You will then be able to login to your self-service pension account</p>
+                <form action="" method="post" class="form">
+
+                        <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+                            Login
+                        </button>
+
+
+                </form>
+            </div>
+
+        </div>
+
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}

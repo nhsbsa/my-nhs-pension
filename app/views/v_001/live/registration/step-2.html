@@ -1,0 +1,117 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-no-nav.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+        <div class="mnp-login-wrapper">
+
+
+            <!--Start of stepper-->
+            <div class="container">
+                <section class="step-indicator">
+                    <div class="step step1 checked">
+                        <div class="step-icon"><i class="fa fa-check" style="font-size:20px;color:white;"></i></div>
+                        <p>Identify</p>
+                    </div>
+                    <div class="indicator-line active"></div>
+                    <div class="step step2 active">
+                        <div class="step-icon">2</div>
+                        <p>Verify</p>
+                    </div>
+                    <div class="indicator-line"></div>
+                    <div class="step step3">
+                        <div class="step-icon">3</div>
+                        <p>Create</p>
+                    </div>
+                </section>
+            </div>
+            <!--End of stepper-->
+
+
+            <h1 class="nhsuk-heading-xs mnp-heading-block">Step 2 - Verify your details</h1>
+            <div class="mnp-login-content-block">
+                <p>Please provide the following personal details.</p>
+                <form action="step-3" method="post" class="form">
+                    <div class="nhsuk-grid-row">
+                        <div class="nhsuk-grid-column-full">
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label mnp-label-default" for="username">
+                                    NI Number
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="nino" name="nino" type="text"
+                                    placeholder="Enter your NI Number">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label mnp-label-default" for="password">
+                                    Member Number
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="memberNo" name="memberNo" type="text"
+                                    placeholder="Enter your Member Number">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label mnp-label-default" for="password">
+                                    First Name
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="firstname" name="firstname" type="text"
+                                    placeholder="Enter your First Name">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label mnp-label-default" for="password">
+                                    Date of Birth
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="dob" name="dob" type="text"
+                                    placeholder="Enter your Date of Birth (DD/MM/YYYY)">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                        <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+                            Continue
+                        </button>
+
+                        <button class="nhsuk-button mnp-btn-primary-default">
+                            Exit
+                        </button>
+
+                </form>
+            </div>
+
+        </div>
+
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}

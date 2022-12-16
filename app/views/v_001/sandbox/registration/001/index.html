@@ -1,0 +1,111 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-001.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+  My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full"> 
+
+      <!-- Start of content -->
+
+      <h1>
+        Welcome
+      </h1>
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <img class="nhsuk-card__img" src="/images/portal-graphics-member-hub.jpg" alt="">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="#">Member hub</a>
+                  </h2>
+                  <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper tortor et eros ultricies.</p>
+                </div>
+              </div>
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <img class="nhsuk-card__img" src="/images/portal-graphics-pensioner-hub.jpg" alt="">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="#">Pensioner hub</a>
+                  </h2>
+                  <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non volutpat neque, ut vehicula purus. Nullam quis.</p>
+                </div>
+              </div>
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+            <div class="nhsuk-card nhsuk-card--clickable">
+                <img class="nhsuk-card__img" src="/images/portal-graphics-employer-hub.jpg" alt="">
+                <div class="nhsuk-card__content">
+                  <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                    <a class="nhsuk-card__link" href="#">Changes to public sector pension schemes</a>
+                  </h2>
+                  <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper luctus turpis.</p>
+                </div>
+              </div>
+        </li>
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+              <img class="nhsuk-card__img" src="/images/portal-graphics-employee-section.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  <a class="nhsuk-card__link" href="#">Total Reward Statement Portal</a>
+                </h2>
+                <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut semper tortor et eros ultricies.</p>
+              </div>
+            </div>
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+              <img class="nhsuk-card__img" src="/images/portal-graphics-help-and-information.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  <a class="nhsuk-card__link" href="#">Help and information</a>
+                </h2>
+                <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam non volutpat neque, ut vehicula purus. Nullam quis.</p>
+              </div>
+            </div>
+      </li>
+      <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+          <div class="nhsuk-card nhsuk-card--clickable">
+              <img class="nhsuk-card__img" src="/images/portal-graphics-nhs-retirement-fellowship.jpg" alt="">
+              <div class="nhsuk-card__content">
+                <h2 class="nhsuk-card__heading nhsuk-heading-m">
+                  <a class="nhsuk-card__link" href="#">NHS retirement fellowship</a>
+                </h2>
+                <p class="nhsuk-card__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas ullamcorper luctus turpis.</p>
+              </div>
+            </div>
+      </li>
+      </ul>
+
+      <!-- End of content -->
+
+    </div>
+  </div>
+{% endblock %}

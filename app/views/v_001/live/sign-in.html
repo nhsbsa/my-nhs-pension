@@ -1,0 +1,93 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-no-nav.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Start of content -->
+    <div class="mnp-login-wrapper">
+      
+      <h1 class="nhsuk-heading-xs mnp-heading-block">Login</h1>
+      <div class="mnp-login-content-block">
+        <form>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full">
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label mnp-label-default" for="username">
+                  Username
+                </label>
+                <input class="nhsuk-input" id="username" name="username" type="text" placeholder="Username">
+              </div>
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label mnp-label-default" for="password">
+                  Password
+                </label>
+                <input class="nhsuk-input" id="password" name="password" type="text" placeholder="Password">
+              </div>
+            </div>
+          </div>
+          <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-one-half">
+              <p><a href="">Forgotten Password?</a><br />
+                <a href="">Forgotten Username?</a>
+              </p>
+            </div>
+            <div class="nhsuk-grid-column-one-half">
+              <button class="nhsuk-button mnp-btn-primary-default mnp-float-right" type="submit">
+                Continue
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+      <h1 class="nhsuk-heading-xs mnp-heading-block">New User Registration</h1>
+      <div class="mnp-login-content-block">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full">
+            <p>To register for your My NHS Pension account, please click 'Register' below.</p>
+            <p>The registration process takes just a few minutes. Once you have successfully signed in, you will be able
+              to change your password within the Your Account page.</p>
+              <a href="registration/step-1">
+            <button class="nhsuk-button mnp-btn-primary-default mnp-float-right">
+              Register
+            </button>
+          </a>
+          </div>
+        </div>
+
+      </div>
+      <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+    </div>
+
+
+    <!-- End of content -->
+
+  </div>
+</div>
+{% endblock %}
