@@ -74,11 +74,15 @@ My NHS Pension
                                         Registration code
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        -
+                                        {% if data['registrationCode'] %}
+                                        {{ data['registrationCode']}} 
+                                        {% else %}
+                                        AHJIRU
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> name</span>
+                                        <a href="identification-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> registration code</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -88,11 +92,15 @@ My NHS Pension
                                         Personal identification code
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        -
+                                        {% if data['pin'] %}
+                                        {{ data['pin']}} 
+                                        {% else %}
+                                        0ejkUDH
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
+                                        <a href="identification-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> personal identification code</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -102,11 +110,15 @@ My NHS Pension
                                         Member number
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        -
+                                        {% if data['memberNo'] %}
+                                        {{ data['memberNo']}} 
+                                        {% else %}
+                                        78364736
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact information</span>
+                                        <a href="identification-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> member number</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -123,11 +135,15 @@ My NHS Pension
                                         First name
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['firstname'] %}
+                                        {{ data['firstname']}} 
+                                        {% else %}
+                                        John
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="personal-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> first name</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -137,11 +153,15 @@ My NHS Pension
                                         National Insurance number
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['nino'] %}
+                                        {{ data['nino']}} 
+                                        {% else %}
+                                        JM 78 67 89 A
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="personal-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> National insurance number</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -171,25 +191,29 @@ My NHS Pension
                                         Username
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['username'] %}
+                                        {{ data['username']}} 
+                                        {% else %}
+                                        johnsmith123
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="account-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> username</span>
                                         </a>
                                     </dd>
                                 </div>
 
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
-                                        Pasword
+                                        Password
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>******</p>
+                                        ******
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="account-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> password</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -199,11 +223,15 @@ My NHS Pension
                                         Email address
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['email'] %}
+                                        {{ data['email']}} 
+                                        {% else %}
+                                        johnsmith@gmail.com
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
                                         <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                            Change<span class="nhsuk-u-visually-hidden"> email address</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -219,11 +247,15 @@ My NHS Pension
                                         Question 1
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityQu1'] %}
+                                        {{ data['securityQu1']}} 
+                                        {% else %}
+                                        What is the middle name of your oldest child?
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 1</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -233,11 +265,15 @@ My NHS Pension
                                         Answer 1
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityAnswer1'] %}
+                                        {{ data['securityAnswer1']}} 
+                                        {% else %}
+                                        Maria
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 1</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -247,11 +283,15 @@ My NHS Pension
                                         Question 2
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityQu2'] %}
+                                        {{ data['securityQu2']}} 
+                                        {% else %}
+                                        What is the name of your favourite childhood teacher?
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 2</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -261,11 +301,15 @@ My NHS Pension
                                         Answer 2
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityAnswer2'] %}
+                                        {{ data['securityAnswer2']}} 
+                                        {% else %}
+                                        Mrs Whitlock
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 2</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -275,11 +319,15 @@ My NHS Pension
                                         Question 3
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityQu3'] %}
+                                        {{ data['securityQu3']}} 
+                                        {% else %}
+                                        What is your grandmother's first name?
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 3</span>
                                         </a>
                                     </dd>
                                 </div>
@@ -289,11 +337,15 @@ My NHS Pension
                                         Answer 3
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        {% if data['securityAnswer3'] %}
+                                        {{ data['securityAnswer3']}} 
+                                        {% else %}
+                                        Madalynn
+                                        {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 3</span>
                                         </a>
                                     </dd>
                                 </div>
