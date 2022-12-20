@@ -1,0 +1,348 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-001.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full ">
+                <div class="nhsuk-back-link">
+                    <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                            <path
+                                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                            </path>
+                        </svg>
+                        Go back</a>
+                </div>
+
+
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+                        <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+                            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
+                                        class="nhsuk-u-visually-hidden">-</span></span></span>
+                            Security details
+                        </h1>
+
+                        <form action="cya" method="post">
+
+                            <p class="nhsuk-u-width-three-quarters">Please select three different security questions and provide answers for each</p>
+
+                            <h2 class="nhsuk-heading-m">Security question 1</h2>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="securityQu1">
+                                    Select your first question
+                                </label>
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu1" name="securityQu1">
+                                    <option value="0">Choose your first question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="securityAnswer1">
+                                  Answer your first question
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer1" name="securityAnswer1" type="text">
+                              </div>
+<br />
+                              <h2 class="nhsuk-heading-m">Security question 2</h2>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="securityQu2">
+                                    Select your second question
+                                </label>
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu2" name="securityQu2">
+                                    <option value="0">Choose your second question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="securityAnswer2">
+                                  Answer your second question
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer2" name="securityAnswer2" type="text">
+                              </div>
+<br />
+                              <h2 class="nhsuk-heading-m">Security question 3</h2>
+
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label " for="securityQu3">
+                                    Select your third question
+                                </label>
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu3" name="securityQu3">
+                                    <option value="0">Choose your third question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="securityAnswer3">
+                                  Answer your third question
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer3" name="securityAnswer3" type="text">
+                              </div>
+
+
+
+                            <button class="nhsuk-button" type="submit">
+                                Continue
+                            </button>
+
+                        </form>
+
+                        <p><a class="nhsuk-link--no-visited-state" href="">Cancel</a></p>
+
+
+
+
+                    </div>
+
+                    <!-- start of stepper-->
+                    <div class="nhsuk-grid-column-one-third">
+
+                        <div id="step-by-step-navigation" class="app-step-nav app-step-nav--active"
+                            data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all"
+                            data-hide-all-text="Hide all">
+                            <ol class="app-step-nav__steps">
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="find-out-if-you-can-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 1
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Identification details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-find-out-if-you-can-get-help-to-buy-food-and-milk-1">
+                                        <!-- <p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> main details</span></a></p> -->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step js-step app-step-nav__step--active"
+                                    id="apply-to-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 2
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Personal details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-apply-to-get-help-to-buy-food-and-milk-2">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> contact details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="check-what-food-and-milk-you-can-buy">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 3
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Account details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-check-what-food-and-milk-you-can-buy-3">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> payment details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active" id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 4
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Security questions
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step" id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 5
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Check your answers
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                            </ol>
+                        </div>
+
+                    </div>
+                    <!-- end of stepper -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}

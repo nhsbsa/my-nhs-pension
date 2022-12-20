@@ -1,10 +1,10 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
-<script src="/js/step-by-step-nav.js"></script>
+<!-- <script src="/js/step-by-step-nav.js"></script>
      <script type="text/javascript">
        var $element = $('#step-by-step-navigation')
        var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
        stepByStepNavigation.start($element)
-     </script>
+     </script> -->
 
 <!-- Extends the layout from /views/layout.html -->
 {% extends 'layout-001.html' %}
@@ -40,7 +40,15 @@ My NHS Pension
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full ">
 
-        <form action="contact-details" method="post">
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-full ">
+            <div class="nhsuk-back-link">
+              <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                  <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+                </svg>
+                Go back</a>
+            </div>
       
             <div class="nhsuk-grid-row">
               <div class="nhsuk-grid-column-two-thirds">
@@ -48,11 +56,12 @@ My NHS Pension
                     <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span class="nhsuk-u-visually-hidden">-</span></span></span>
                       What you will need
                   </h1>
+                  <form action="identification-details" method="post">
                   <ul>
                       <li>Your registration code</li>
                       <li>Your personal identification code</li>
-                      <li>Your National Insurance number</li>
                       <li>Your member number</li>
+                      <li>Your National Insurance number</li>
                   </ul>
 
               <details class="nhsuk-details">
@@ -62,31 +71,29 @@ My NHS Pension
                   </span>
                 </summary>
                 <div class="nhsuk-details__text">
-                  <h2 class="nhsuk-heading-xs">Registration code</h2>
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Registration code</h2>
                   <p>This information will have been provided to you by your Pensions Administrator and it will be this format.</p>
                   <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
-                  <h2 class="nhsuk-heading-xs">Personal identification code</h2>
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Personal identification code</h2>
                   <p>This information will have been provided to you by your Pensions Administrator and it will be in this format.</p>
                   <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
-                  <h2 class="nhsuk-heading-xs">National Insurance number</h2>
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Member number</h2>
                   <p>This information </p>
                   <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
-                  <h2 class="nhsuk-heading-xs">Member number</h2>
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">National Insurance number</h2>
                   <p>This information </p>
-
-              
                 </div>
               </details>
 
               <button class="nhsuk-button" type="submit">
                 Continue
               </button>
-      
+            </form>
               <p><a class="nhsuk-link--no-visited-state" href="">Cancel</a></p>
       
             </div>
       
-          
+          <!-- start of stepper-->
             <div class="nhsuk-grid-column-one-third">
       
               <div id="step-by-step-navigation" class="app-step-nav app-step-nav--active" data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
@@ -210,8 +217,9 @@ My NHS Pension
                 </div>
       
           </div>
+          <!-- end of stepper -->
       
-        </div></form>
+        </div>
       </div>
     </div>
 

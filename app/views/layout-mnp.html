@@ -5,7 +5,7 @@
 -->
 
 <!-- Extends the layout from /docs/views/template.html -->
-{% extends "template.html" %}
+{% extends "template-mnp.html" %}
 
 <!-- Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 {% block headCSS %}
@@ -21,7 +21,7 @@ My NHS Pension
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
 <header class="nhsuk-header" role="banner">
-  <div class="nhsuk-width-container nhsuk-header__container"> 
+  <div class="nhsuk-width-container-fluid nhsuk-header__container"> 
 
     <!--Start My NHS Pension logo-->
     <div class="nhsuk-header__content" id="content-header">
@@ -48,7 +48,7 @@ My NHS Pension
 
   <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation"
     aria-labelledby="label-navigation">
-    <div class="nhsuk-width-container">
+    <div class="nhsuk-width-container-fluid">
       <ul class="nhsuk-header__navigation-list">
         <li class="nhsuk-header__navigation-item">
           <a class="nhsuk-header__navigation-link" href="">
@@ -65,8 +65,8 @@ My NHS Pension
             Help and information
           </a>
         </li>
-        <li><a href="sign-in"><button class="nhsuk-button nhsuk-button--reverse mnp-login-btn">
-          Login
+        <li><a href="sign-in"><button class="nhsuk-button nhsuk-button--reverse mnp-login-btn mnp-login-btn-live">
+          Sign in
         </button></a></li>
       </ul>
     </div>
@@ -80,9 +80,9 @@ My NHS Pension
 {% block footer %}
 <footer role="contentinfo">
   <div class="nhsuk-footer" id="nhsuk-footer">
-    <div class="nhsuk-width-container">
+    <div class="nhsuk-width-container-fluid">
       <div class="nhsuk-grid-row">
-        <div class="nhsuk-grid-column-full">
+        <div class="nhsuk-grid-column-full  mnp-main-wrapper-padding">
           <h2 class="nhsuk-u-visually-hidden">Additional links</h2>
           <ul class="nhsuk-footer__list">
             <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="">Accessibility</a></li>

@@ -1,0 +1,271 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-001.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full ">
+                <div class="nhsuk-back-link">
+                    <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                            <path
+                                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                            </path>
+                        </svg>
+                        Go back</a>
+                </div>
+
+
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+                        <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+                            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
+                                        class="nhsuk-u-visually-hidden">-</span></span></span>
+                            Account details
+                        </h1>
+
+                        <form action="security-details" method="post">
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="username">
+                                    Username
+                                </label>
+                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
+                                    Choose a username to use to login to the service. It can be made up of letters and numbers but no spaces.
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="username" name="username"
+                                    type="text">
+                            </div>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="password">
+                                    Password
+                                </label>
+                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
+                                    Your password should only be upper or lower case letters
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password"
+                                    type="text">
+                            </div>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="password">
+                                    Confirm password
+                                </label>
+                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
+                                    Retype your password
+                                </div>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password"
+                                    type="text">
+                            </div>
+
+                            <div class="nhsuk-form-group">
+                                <label class="nhsuk-label" for="password">
+                                    Email address
+                                </label>
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password"
+                                    type="text">
+                            </div>
+
+
+
+
+
+
+                            <button class="nhsuk-button" type="submit">
+                                Continue
+                            </button>
+
+                        </form>
+
+                        <p><a class="nhsuk-link--no-visited-state" href="">Cancel</a></p>
+
+
+
+
+                    </div>
+
+                    <!-- start of stepper-->
+                    <div class="nhsuk-grid-column-one-third">
+
+                        <div id="step-by-step-navigation" class="app-step-nav app-step-nav--active"
+                            data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all"
+                            data-hide-all-text="Hide all">
+                            <ol class="app-step-nav__steps">
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="find-out-if-you-can-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 1
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Identification details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-find-out-if-you-can-get-help-to-buy-food-and-milk-1">
+                                        <!-- <p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> main details</span></a></p> -->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step js-step app-step-nav__step--active"
+                                    id="apply-to-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 2
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Personal details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-apply-to-get-help-to-buy-food-and-milk-2">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> contact details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="check-what-food-and-milk-you-can-buy">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 3
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Account details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-check-what-food-and-milk-you-can-buy-3">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> payment details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step" id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 4
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Security questions
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step" id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 5
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Check your answers
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                            </ol>
+                        </div>
+
+                    </div>
+                    <!-- end of stepper -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}

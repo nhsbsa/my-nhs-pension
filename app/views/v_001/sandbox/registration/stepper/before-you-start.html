@@ -1,0 +1,103 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-001.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+      Create an account
+    </h1>
+
+    <p>Use this service to create a new My NHS Pension account. The registration process takes just a few minutes.</p>
+
+    <p>During the registration you will be asked to confirm a number of key items of personal information. This
+      information is used to validate your identity against the information that is held on our system.</p>
+    <h2>Before you start</h2>
+    <p>You'll need:</p>
+    <ul>
+      <li>your registration code</li>
+      <li>your personal identification code</li>
+      <li>your member number</li>
+      <li>your National Insurance number</li>
+    </ul>
+    <form action="identification-details" method="post">
+
+
+      <details class="nhsuk-details">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to find your information
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Registration code</h2>
+          <p>This information will have been provided to you by your Pensions Administrator and it will be this format.
+          </p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Personal identification code</h2>
+          <p>This information will have been provided to you by your Pensions Administrator and it will be in this
+            format.</p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Member number</h2>
+          <p>This information </p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">National Insurance number</h2>
+          <p>You may be able to find it on your:</p>
+          <ul>
+            <li>payslip</li>
+            <li>P60</li>
+            <li>letters about tax, pensions or benefits</li>
+          </ul>
+          <p>For more information visit the <a href="https://www.gov.uk/lost-national-insurance-number"
+              target="_blank">Find a lost National Insurance number</a> page.</p>
+        </div>
+      </details>
+
+      <button class="nhsuk-button" type="submit">
+        Start now
+      </button>
+    </form>
+    <p><a class="nhsuk-link--no-visited-state" href="">Cancel</a></p>
+
+  </div>
+
+</div>
+
+
+<!-- End of content -->
+
+
+{% endblock %}

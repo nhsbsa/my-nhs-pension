@@ -1,9 +1,9 @@
 <!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
 
-<!-- Extends the layout from /views/layout.html -->
+<!-- Extends the layout from /views/layout-mnp.html -->
 {% extends 'layout-no-nav.html' %}
 <!-- 
-  In /views/layout.html you can:
+  In /views/layout-mnp.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
@@ -61,25 +61,150 @@ My NHS Pension
                 <form action="complete" method="post" class="form">
                     <div class="nhsuk-grid-row">
                         <div class="nhsuk-grid-column-full">
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group mnp-form-group-default">
                                 <label class="nhsuk-label mnp-label-default" for="username">
                                     Username
                                 </label>
-                                <input class="nhsuk-input mnp-input-default" id="nino" name="nino" type="text"
+                                <input class="nhsuk-input mnp-input-default" id="username" name="username" type="text"
                                     placeholder="Enter your new username">
-                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                                <span class="fa fa-pencil mnp-input-icon"></span>
                             </div>
-                           
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default" for="password">
+                                    Password
+                                </label>
+                                <div class="nhsuk-hint" id="password-hint">
+                                    Your new password must meet the following requirements: Your Password should only by
+                                    upper or lower case letters
+                                </div>
+                                <input class="nhsuk-input mnp-input-default" id="password" name="password" type="text"
+                                    placeholder="Enter a password for your account">
+                                <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default" for="passwordConfirm">
+                                    Confirm Password
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="passwordConfirm" name="passwordConfirm"
+                                    type="text" placeholder="Confirm the password for your account">
+                                <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default" for="email">
+                                    Email Address
+                                </label>
+                                <div class="nhsuk-hint" id="email-hint">
+                                    We need your email address so that you can complete your registration and for
+                                    account recovery should you need it in the future.
+                                </div>
+                                <input class="nhsuk-input mnp-input-default" id="email" name="email" type="text"
+                                    placeholder="Email Address">
+                                <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default" for="security1">
+                                    Security Quesions
+                                </label>
+                                <div class="nhsuk-hint" id="password-hint">
+                                    Please select three different security questions and provide answers for each
+                                </div>
+                                <select class="nhsuk-select" id="security1" name="security1">
+                                    <option value="0">Choose your first question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label nhsuk-u-visually-hidden" for="security2">
+                                    Security question 2
+                                </label>
+                                <select class="nhsuk-select" id="security2" name="security2">
+                                    <option value="0">Choose your second question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label nhsuk-u-visually-hidden" for="security1">
+                                    Security question 3
+                                </label>
+                                <select class="nhsuk-select" id="security3" name="security3">
+                                    <option value="0">Choose your third question</option>
+                                    <option value="1">In what city did you meet your spouse/significant other?</option>
+                                    <option value="2">In what city does your nearest sibling live?</option>
+                                    <option value="3">In what city or town was your first job?</option>
+                                    <option value="4">To what city did you go to on your honeymoon?</option>
+                                    <option value="5">What is the country of your ultimate dream vacation?</option>
+                                    <option value="6">What is the middle name of your oldest child?</option>
+                                    <option value="7">What is the name of the company of your first job?</option>
+                                    <option value="8">What is the name of the place your wedding reception was held?
+                                    </option>
+                                    <option value="9">What is the name of your favourite childhood friend?</option>
+                                    <option value="10">What is the name of your favourite childhood teacher?</option>
+                                    <option value="11">What is your grandmother's first name?</option>
+                                    <option value="12">What is your mother's middle name?</option>
+                                    <option value="13">What is your oldest sibling's birthday month and year? (e.g.
+                                        January 1970)</option>
+                                    <option value="14">What is your oldest sibling's middle name?</option>
+                                    <option value="15">What is your preferred musical genre?</option>
+                                    <option value="16">What time of day were you born?</option>
+                                    <option value="17">What was your childhood nickname?</option>
+                                    <option value="18">What was your dream job as a child?</option>
+                                    <option value="19">What was your favourite place to visit as a child?</option>
+                                    <option value="20">Who was your childhood hero?</option>
+                                </select>
+                            </div>
+
                         </div>
                     </div>
 
-                        <button class="nhsuk-button mnp-btn-primary-default" type="submit">
-                            Complete Registration
-                        </button>
+                    <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+                        Complete Registration
+                    </button>
 
-                        <button class="nhsuk-button mnp-btn-primary-default">
-                            Exit
-                        </button>
+                    <button class="nhsuk-button mnp-btn-primary-default">
+                        Exit
+                    </button>
 
                 </form>
             </div>
