@@ -123,6 +123,44 @@
 }
 
 
+// Start modal
+
+.mnp-modal-content-default {
+  background-color: #eee;
+}
+
+.mnp-modal-header-default {
+  border-bottom: 1px solid #ccc;
+}
+
+.mnp-modal-footer-default {
+  border-top: 1px solid #ccc;
+}
+
+.mnp-modal-header-default {
+  color: darkgreen;
+}
+
+.mnp-modal-close-default {
+  color: darkgreen;
+  opacity: 1;
+}
+
+.mnp-btn-modal-primary-default {
+  background-color: darkgreen;
+  border: none;
+  box-shadow: 0px 3px darkolivegreen;
+}
+
+.mnp-btn-modal-secondary-default {
+  background-color: white;
+  border: 1px solid darkgreen;
+  color: darkgreen;
+  box-shadow: 0px 3px darkolivegreen;
+}
+//End modal
+
+
 
 
 

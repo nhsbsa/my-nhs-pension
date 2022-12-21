@@ -48,6 +48,8 @@
     <link type="font/woff2" href="https://assets.nhs.uk/fonts/FrutigerLTW01-55Roman.woff2" rel="preload" as="font" crossorigin>
     <link type="font/woff2" href="https://assets.nhs.uk/fonts/FrutigerLTW01-65Bold.woff2" rel="preload" as="font" crossorigin>
 
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {% block headCSS %}
       <link href="/css/main.css" rel="stylesheet">
     {% endblock %}
@@ -106,6 +108,28 @@
       {% endblock %}
 
     {% block bodyEnd %}{% endblock %}
+
+  <!-- Terms and condition modal -->
+  <div class="modal fade" id="termsModal" tabindex="-1" role="dialog" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content mnp-modal-content-default">
+        <div class="modal-header mnp-modal-header-default">
+          <h5 class="modal-title" id="termsModalLabel">Terms & Conditions</h5>
+          <button type="button" class="close mnp-modal-close-default" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+        
+        </div>
+        <div class="modal-footer mnp-modal-footer-default">
+          <button type="button" class="btn btn-secondary mnp-btn-modal-secondary-default" data-dismiss="modal">Cancel</button>
+          <a href="/v_001/live/registration/terms-conditions" target="_blank"><button type="button" class="btn btn-secondary mnp-btn-modal-secondary-default">View Terms & Conditions</button></a>
+          <a href="/v_001/live/sign-in"><button type="button" class="btn btn-primary mnp-btn-modal-primary-default">Accept</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   </body>
 </html>
