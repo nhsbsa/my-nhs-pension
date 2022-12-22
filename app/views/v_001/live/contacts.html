@@ -1,0 +1,80 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- Extends the layout from /views/layout-mnp.html -->
+{% extends 'layout-mnp.html' %}
+<!-- 
+  In /views/layout-mnp.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-three-quarters">
+    <p>If you have any questions about your NHS Pension, you can contact us by:</p>
+    <p><strong>Telephone (members):</strong> 0300 330 1346</p>
+    <p><strong>Outside the UK (members):</strong> +44 191 279 0571</p>
+    <p><strong>Telephone (pensioners):</strong> 0345 121 2522</p>
+    <p><strong>Outside the UK (pensioners):</strong> +44 191 283 0303</p>
+    <p>Monday to Friday, 8am to 6pm</p>
+    <p class="nhsuk-u-padding-bottom-6"><a href="#">Find out about call charges</a></p>
+
+    <p><strong>Email (members):</strong> <a href="#">nhsbsa.pensionmember@nhsbsa.nhs.uk</a></p>
+    <p><strong>Email (pensioners):</strong> <a href="#">nhsbsa.pensionmember@nhsbsa.nhs.uk</a></p>
+    <p class="nhsuk-u-padding-bottom-6"><strong>Twitter:</strong> direct message @nhs_pensions</p>
+
+    <p><strong>You can write to:</strong></p>
+    <p>NHS Pensions</p>
+    <p>PO Box 2269</p>
+    <p>Bolton</p>
+    <p class="nhsuk-u-padding-bottom-6">BL6 9JS</p>
+
+    <p>All handwritten envelopes will require the postage to be paid. Royal Mail will not accept:</p>
+    <ul>
+      <li>handwritten freepost envelopes</li>
+      <li>pre-paid envelopes where the address has been changed</li>
+    </ul>
+
+  </div>
+  <div class="nhsuk-grid-column-one-quarter">
+    <div class="mnp-side-panel-default">
+      <h2>Contacts</h2>
+      <p class="nhsuk-u-padding-bottom-3">Contact Information<br />
+        0300 330 1346<br />
+        <a href="">nhsbsa.pensionsmember@nhsbsa.nhs.uk</a><br />
+        Opening times<br />
+        Monday to Friday, 8am to 6pm
+      </p>
+      <p>Outside the UK<br />
+        +44 191 279 0571<br />
+        <a href="#">nhsbsa.pensionsmember@nhsbsa.nhs.uk</a><br />
+        Opening times<br />
+        Monday to Friday, 8am to 6pm
+      </p>
+    </div>
+  </div>
+</div>
+<!-- End of content -->
+
+
+
+{% endblock %}

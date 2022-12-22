@@ -3,7 +3,7 @@
 <!-- Extends the layout from /views/layout-mnp.html -->
 {% extends 'layout-no-nav.html' %}
 <!-- 
-  In /views/layout-mnp.html you can:
+  In /views/layout-no-nav.html you can:
     - change the header and footer 
     - add custom CSS and JavaScript
 -->
@@ -77,13 +77,14 @@ My NHS Pension
               </div>
             </div>
           </div>
-            <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+            <button class="nhsuk-button mnp-btn-primary-default" id="continue" type="submit">
                 Continue
             </button>
             <button class="nhsuk-button mnp-btn-primary-default">
               Exit
           </button>
         </form>
+
       </div>
 
     </div>

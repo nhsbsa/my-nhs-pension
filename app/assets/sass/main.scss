@@ -69,9 +69,31 @@
 }
 
 //Start of default - styles to try and mimic the default styles that came with the product
+.mnp-default p {
+  margin-bottom: 18px;
+  font-size: 1.1rem;
+}
 
 .mnp-header__container-default {
   min-height: 135px;
+}
+
+.mnp-side-panel-default {
+  border: solid 1px #eee;
+}
+
+.mnp-side-panel-default p {
+  padding:0 12px;
+  overflow-wrap: break-word;
+}
+
+.mnp-side-panel-default h2 {
+  background-color:#005eb8;
+  color: white;
+  padding: 8px;
+  font-weight: normal;
+  margin-bottom: 8px;
+  font-size: 1.3rem;
 }
 
 .mnp-login-btn-live {
@@ -121,6 +143,7 @@
 .mnp-form-group-default {
   margin-bottom: 36px;
 }
+
 
 
 // Start modal

@@ -1,0 +1,92 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-001.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <h1 class="nhsuk-heading-xl">
+            Terms and conditions
+        </h1>
+
+        <p>ATTENTION: For the purpose of this legal notice, Member Self Service (MMS) covers the website, the iOS app
+            (Apple) or PWA (Google).<br />
+            This legal notice applies to the entire contents of MMS and to any correspondence by e-mail between us and
+            you.
+            Please read these terms before using MMS. If you do not accept these terms, do not use MMS.</p>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu lacus sed eros hendrerit eleifend in
+            non
+            velit. Nunc ante elit, ullamcorper et augue non, suscipit tincidunt augue. Proin gravida blandit lorem vel
+            accumsan. Suspendisse ut dolor non turpis maximus sodales. Sed ullamcorper tincidunt fermentum. Donec sed
+            neque
+            mauris. Pellentesque mattis ante at erat maximus, id sodales mauris faucibus. Phasellus tristique non sem
+            malesuada consequat. Morbi ultricies feugiat diam in dictum.
+        </p>
+        <p>In vulputate nisi mauris, ac euismod est tincidunt ac. Aliquam at turpis ipsum. In aliquam lobortis quam eu
+            molestie. Sed semper porta vestibulum. Morbi in feugiat massa, ullamcorper commodo odio. Phasellus posuere
+            nec
+            neque sodales lacinia. Cras metus leo, lobortis et erat quis, posuere bibendum ligula. Orci varius natoque
+            penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vestibulum quis consectetur orci. Nam nec
+            scelerisque justo. Nulla elementum, diam vel cursus pellentesque, felis felis aliquam ligula, posuere
+            viverra nunc
+            ante nec sem. Proin tortor erat, sagittis sed facilisis sed, tristique eu ipsum. Aenean fringilla ultricies
+            metus.
+            Donec tristique nulla vitae arcu egestas maximus. Fusce laoreet vitae nulla nec rutrum. Suspendisse
+            ullamcorper
+            sapien lacus, efficitur commodo felis finibus consectetur.
+        </p>
+        <p>Etiam eget ante congue, interdum sem nec, posuere justo. Pellentesque tincidunt erat eu est tristique egestas
+            non
+            at tellus. Aenean quis pharetra metus, at tempor felis. Pellentesque pulvinar ligula diam, nec hendrerit ex
+            posuere id. Suspendisse sit amet quam felis. In auctor iaculis purus id imperdiet. Maecenas ut dapibus
+            tortor.
+            Phasellus ullamcorper pretium mauris. Pellentesque in velit suscipit urna vestibulum dictum at vel elit.
+            Proin
+            maximus finibus elementum. Maecenas lacinia fringilla sem, nec consequat purus tincidunt in. Nam quam purus,
+            gravida ut ligula vitae, rhoncus convallis lorem.
+        </p>
+
+
+
+    </div>
+
+</div>
+
+
+<!-- End of content -->
+
+
+{% endblock %}
