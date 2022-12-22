@@ -101,15 +101,16 @@ My NHS Pension
                                     placeholder="Email Address">
                                 <span class="fa fa-pencil mnp-input-icon"></span>
                             </div>
+
                             <div class="nhsuk-form-group mnp-form-group-default">
                                 <label class="nhsuk-label mnp-label-default" for="security1">
-                                    Security Quesions
+                                    Security Questions
                                 </label>
                                 <div class="nhsuk-hint" id="password-hint">
                                     Please select three different security questions and provide answers for each
                                 </div>
-                                <select class="nhsuk-select" id="security1" name="security1">
-                                    <option value="0">Choose your first question</option>
+                                <select class="nhsuk-select" id="security1" name="security1" onChange=showHide()>
+                                    <option value="">Choose your first question</option>
                                     <option value="1">In what city did you meet your spouse/significant other?</option>
                                     <option value="2">In what city does your nearest sibling live?</option>
                                     <option value="3">In what city or town was your first job?</option>
@@ -134,6 +135,20 @@ My NHS Pension
                                     <option value="20">Who was your childhood hero?</option>
                                 </select>
                             </div>
+
+                            <div name="answer1" id="answer1">
+                                <div class="nhsuk-form-group mnp-form-group-default">
+                                    <label class="nhsuk-label mnp-label-default nhsuk-u-visually-hidden"
+                                        for="securityAnswer1">
+                                        Security question answer 1
+                                    </label>
+                                    <input class="nhsuk-input mnp-input-default" id="securityAnswer1"
+                                        name="securityAnswer1" type="text" placeholder="Enter the answer to question 1">
+                                    <span class="fa fa-pencil mnp-input-icon"></span>
+                                </div>
+                            </div>
+
+
                             <div class="nhsuk-form-group mnp-form-group-default">
                                 <label class="nhsuk-label nhsuk-u-visually-hidden" for="security2">
                                     Security question 2
@@ -164,6 +179,19 @@ My NHS Pension
                                     <option value="20">Who was your childhood hero?</option>
                                 </select>
                             </div>
+
+                            <div name="answer2" id="answer2">
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default nhsuk-u-visually-hidden"
+                                    for="securityAnswer2">
+                                    Security question answer 2
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="securityAnswer2" name="securityAnswer2"
+                                    type="text" placeholder="Enter the answer to question 2">
+                                <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
+                            </div>
+
                             <div class="nhsuk-form-group mnp-form-group-default">
                                 <label class="nhsuk-label nhsuk-u-visually-hidden" for="security1">
                                     Security question 3
@@ -193,6 +221,18 @@ My NHS Pension
                                     <option value="19">What was your favourite place to visit as a child?</option>
                                     <option value="20">Who was your childhood hero?</option>
                                 </select>
+                            </div>
+
+                            <div name="answer3" id="answer3">
+                            <div class="nhsuk-form-group mnp-form-group-default">
+                                <label class="nhsuk-label mnp-label-default nhsuk-u-visually-hidden"
+                                    for="securityAnswer3">
+                                    Security question answer 3
+                                </label>
+                                <input class="nhsuk-input mnp-input-default" id="securityAnswer3" name="securityAnswer3"
+                                    type="text" placeholder="Enter the answer to question 3">
+                                <span class="fa fa-pencil mnp-input-icon"></span>
+                            </div>
                             </div>
 
                         </div>
