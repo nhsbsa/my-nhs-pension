@@ -109,7 +109,7 @@ My NHS Pension
                                 <div class="nhsuk-hint" id="password-hint">
                                     Please select three different security questions and provide answers for each
                                 </div>
-                                <select class="nhsuk-select" id="security1" name="security1" onChange=showHide()>
+                                <select class="nhsuk-select" id="security1" name="security1" onChange="showHide(this)">
                                     <option value="">Choose your first question</option>
                                     <option value="1">In what city did you meet your spouse/significant other?</option>
                                     <option value="2">In what city does your nearest sibling live?</option>
@@ -238,7 +238,7 @@ My NHS Pension
                         </div>
                     </div>
 
-                    <button class="nhsuk-button mnp-btn-primary-default" type="submit">
+                    <button class="nhsuk-button mnp-btn-primary-default" type="submit" disabled>
                         Complete Registration
                     </button>
 
