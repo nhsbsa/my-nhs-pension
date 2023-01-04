@@ -148,6 +148,9 @@
 #answer1, #answer2, #answer3 {
 	display: none;
 }
+div[name="show-hide"] {
+  display: none;
+}
 
 .mnp-footer__list-default {
   width: 100%;

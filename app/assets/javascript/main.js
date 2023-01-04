@@ -37,7 +37,7 @@ if(document.getElementsByTagName('form').length > 0) {
 //Security question /live/registration/step-3
 function showHide(dropdown) {
     let dropdownList = dropdown;
-    let target = document.getElementById('answer1');
+    let target = dropdown.parentNode.querySelector('[name="show-hide"]');
 
     if (dropdownList.value != "") {
         target.style.display = 'block';
