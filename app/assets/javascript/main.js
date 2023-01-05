@@ -27,8 +27,8 @@ const disableSubmitUntilInput = (form) => {
     });
 }
 
-if(document.getElementsByTagName('form-disabled').length > 0) {
-    let forms = [...document.getElementsByTagName('form-disabled')];
+if(document.getElementsByClassName('form-disabled').length > 0) {
+    let forms = [...document.getElementsByClassName('form-disabled')];
     forms.forEach(form => {
         disableSubmitUntilInput(form);
     })
