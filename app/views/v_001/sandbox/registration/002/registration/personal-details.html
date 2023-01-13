@@ -1,0 +1,299 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full-transactional.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Start of content -->
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full ">
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.back()">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+              <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            </svg>
+            Go back</a>
+        </div>
+
+
+
+        <div class="nhsuk-grid-row">
+          <div class="nhsuk-grid-column-two-thirds">
+            
+
+
+            <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+              <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
+                    class="nhsuk-u-visually-hidden">-</span></span></span>
+              Personal details
+            </h1>
+
+            <form action="account-details" method="post">
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="firstname">
+                  First name
+                </label>
+                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="fistname-hint-text">
+                    For example, John
+                  </div>
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstname" name="firstname" type="text">
+              </div>
+
+              <div class="nhsuk-form-group">
+                <fieldset class="nhsuk-fieldset" aria-describedby="example-hint" role="group">
+                  <legend class="nhsuk-fieldset__legend nhsuk-label--l nhsuk-u-margin-bottom-2">
+                    <h1 class="nhsuk-label">
+                      Date of birth
+                    </h1>
+                  </legend>
+                  <div class="nhsuk-hint" id="example-hint">
+                    For example, 15 3 1984
+                  </div>
+              
+                  <div class="nhsuk-date-input" id="example">
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                          Day
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                          Month
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                    <div class="nhsuk-date-input__item">
+                      <div class="nhsuk-form-group">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                          Year
+                        </label>
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+              
+              </div>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="memberNo">
+                  Pension SD reference number
+                </label>
+                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="memberNo-hint-text">
+                  For example, 78364736
+                </div>
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="memberNo" name="memberNo" type="text">
+              </div>
+
+              <div class="nhsuk-form-group">
+                <label class="nhsuk-label" for="nino">
+                  National Insurance number
+                </label>
+                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="nino-hint-text">
+                  For example, JM 78 67 89 A
+                </div>
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="nino" name="nino" type="text">
+              </div>
+
+              <details class="nhsuk-details nhsuk-u-margin-bottom-9">
+                <summary class="nhsuk-details__summary">
+                  <span class="nhsuk-details__summary-text">
+                    How to find your information
+                  </span>
+                </summary>
+                <div class="nhsuk-details__text">
+
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Pension SD reference number</h2>
+                  <p>An 8 digit number found in the filename of the document attached to your invitation letter, for example 78364736</p>
+                  <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">National Insurance number</h2>
+                  <p>You may be able to find it on your:</p>
+                  <ul>
+                    <li>payslip</li>
+                    <li>P60</li>
+                    <li>letters about tax, pensions or benefits</li>
+                  </ul>
+                  <p>For more information visit the <a href="https://www.gov.uk/lost-national-insurance-number"
+                      target="_blank">Find a lost National Insurance number</a> page.</p>
+                </div>
+              </details>
+
+              <button class="nhsuk-button" type="submit">
+                Continue
+              </button>
+
+            </form>
+
+            <p><a class="nhsuk-link--no-visited-state" href="../index">Cancel</a></p>
+
+
+
+
+          </div>
+
+          <!-- start of stepper-->
+          <div class="nhsuk-grid-column-one-third">
+
+            <div id="step-by-step-navigation" class="app-step-nav app-step-nav--active" data-show-text="Show"
+              data-hide-text="Hide" data-show-all-text="Show all" data-hide-all-text="Hide all">
+              <ol class="app-step-nav__steps">
+                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                  id="find-out-if-you-can-get-help-to-buy-food-and-milk">
+                  <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                    <h2 class="app-step-nav__title">
+                      <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                          <span class="app-step-nav__circle-background">
+                            <span class="nhsuk-u-visually-hidden">Step 1 complete</span>       
+                            <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
+                              <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+                            </svg>
+                          </span>
+                        </span>
+                      </span> 
+
+                      <span class="js-step-title js-step-title-complete">
+                        Identification details                          
+                      </span>
+                    </h2>
+                  </div>
+
+
+
+                </li>
+
+                <li class="app-step-nav__step js-step js-step app-step-nav__step--active" id="apply-to-get-help-to-buy-food-and-milk">
+                  <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                    <h2 class="app-step-nav__title">
+                      <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                          <span class="app-step-nav__circle-background">
+                            <span class="nhsuk-u-visually-hidden">Step</span> 2
+                          </span>
+                        </span>
+                      </span>
+
+                      <span class="js-step-title">
+                        Personal details
+                      </span>
+                    </h2>
+                  </div>
+
+
+                </li>
+
+                <li class="app-step-nav__step js-step" id="check-what-food-and-milk-you-can-buy">
+                  <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                    <h2 class="app-step-nav__title">
+                      <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                          <span class="app-step-nav__circle-background js-step-title-to-do">
+                            <span class="nhsuk-u-visually-hidden">Step</span> 3
+                          </span>
+                        </span>
+                      </span>
+
+                      <span class="js-step-title js-step-title-to-do">
+                        Account details
+                      </span>
+                    </h2>
+                  </div>
+
+
+
+                </li>
+
+                <li class="app-step-nav__step js-step" id="activating-and-using-your-card">
+                  <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                    <h2 class="app-step-nav__title">
+                      <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                          <span class="app-step-nav__circle-background js-step-title-to-do">
+                            <span class="nhsuk-u-visually-hidden">Step</span> 4
+                          </span>
+                        </span>
+                      </span>
+
+                      <span class="js-step-title js-step-title-to-do">
+                        Security questions
+                      </span>
+                    </h2>
+                  </div>
+
+
+                </li>
+
+                <li class="app-step-nav__step js-step" id="activating-and-using-your-card">
+                  <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                    <h2 class="app-step-nav__title">
+                      <span class="app-step-nav__circle app-step-nav__circle--number">
+                        <span class="app-step-nav__circle-inner">
+                          <span class="app-step-nav__circle-background js-step-title-to-do">
+                            <span class="nhsuk-u-visually-hidden">Step</span> 5
+                          </span>
+                        </span>
+                      </span>
+
+                      <span class="js-step-title js-step-title-to-do">
+                        Check your answers
+                      </span>
+                    </h2>
+                  </div>
+
+
+
+                </li>
+
+              </ol>
+            </div>
+
+          </div>
+          <!-- end of stepper -->
+
+        </div>
+      </div>
+    </div>
+
+    <!-- End of content -->
+
+  </div>
+</div>
+{% endblock %}

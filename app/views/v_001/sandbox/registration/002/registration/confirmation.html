@@ -1,0 +1,61 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full-transactional.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+        <div class="done-panel">
+            <h1 class="heading-xlarge">Your account has been created</h1>   
+          </div>
+        <h2>What happens next</h2>
+        <p>You will receive an activation link to the email address you provided when setting up your account.</p>
+        <p>Please click the link provided in the email to
+            complete the account creation process. You will then be able to sign in to your My NHS Pension account.</p>
+
+            <div class="nhsuk-inset-text">
+              <span class="nhsuk-u-visually-hidden">Information: </span>
+              <p>When you sign in you will be asked to set up two-factor authentication. You can do this either using an SMS message or an authenticator app on your smartphone.</p>
+            </div>
+
+            <a href="../index">
+            <button class="nhsuk-button">
+                Return to homepage
+              </button>
+            </a>
+    </div>
+</div>
+<!-- End of content -->
+
+{% endblock %}

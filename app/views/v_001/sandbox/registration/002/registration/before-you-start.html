@@ -1,0 +1,119 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full-transactional.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+    <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+      Create an account
+    </h1>
+
+    <p>Use this service to create a new My NHS Pension account.</p>
+
+    <p>The account creation process takes around 15 minutes, during which you will be asked to confirm a number of key items of personal information. This
+      information is used to validate your identity against the information that is held on our system.</p>
+
+
+
+
+    <h2>Before you start</h2>
+
+    <p>You'll need:</p>
+    <ul>
+      <li>your registration code</li>
+      <li>your personal identification code</li>
+      <li>your pension SD reference number</li>
+      <li>your National Insurance number</li>
+    </ul>
+
+
+
+    <form action="identification-details" method="post">
+
+
+      <details class="nhsuk-details nhsuk-u-margin-bottom-9">
+        <summary class="nhsuk-details__summary">
+          <span class="nhsuk-details__summary-text">
+            How to find your information
+          </span>
+        </summary>
+        <div class="nhsuk-details__text">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Registration code</h2>
+          <p>A 6 character code found on the document attached to your invitation email, for example AHJIRU
+          </p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Personal identification code</h2>
+          <p>An alphanumeric code found on the document attached to your invitation letter, for example 0ejkUDH</p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Pension SD reference number</h2>
+          <p>An 8 digit number found in the filename of the document attached to your invitation letter, for example 78364736</p>
+          <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+          <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">National Insurance number</h2>
+          <p>You may be able to find it on your:</p>
+          <ul>
+            <li>payslip</li>
+            <li>P60</li>
+            <li>letters about tax, pensions or benefits</li>
+          </ul>
+          <p>For more information visit the <a href="https://www.gov.uk/lost-national-insurance-number"
+              target="_blank">Find a lost National Insurance number</a> page.</p>
+        </div>
+      </details>
+
+      <div class="nhsuk-inset-text">
+        <span class="nhsuk-u-visually-hidden">Information: </span>
+        <p>Once you have created your account you will need to set up two-factor authentication to be able to sign in. You can do this either using an SMS message or an authenticator app on your smartphone.</p>
+      </div>
+
+
+     
+      <button class="nhsuk-button" type="submit">
+        Start now
+      </button>
+    </form>
+    <p>By using this service you are agreeing to our <a href="../001/terms-conditions" target="_blank">terms and conditions</a>.</p>
+
+
+
+  </div>
+
+</div>
+
+
+<!-- End of content -->
+
+
+{% endblock %}

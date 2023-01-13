@@ -21,15 +21,7 @@ My NHS Pension
 <!-- Header code examples can be found at https://service-manual.nhs.uk/design-system/components/header -->
 {% block header %}
 <header class="nhsuk-header" role="banner">
-  <div class="nhsuk-width-container-fluid nhsuk-header__container">
-
-    <!--Start My NHS Pension logo-->
-    <div class="nhsuk-header__content" id="content-header">
-      <a class="nhsuk-header__link" href="index" aria-label="My NHS Pension homepage">
-      <img src="/images/my-nhs-pension-logo.png">
-    </a>
-    </div>
-    <!-- End My NHS Pension logo-->
+  <div class="nhsuk-width-container-fluid nhsuk-header__container mnp-header__container">
 
     <!--Start NHS logo-->
     <div class="nhsuk-header__logo">
@@ -44,6 +36,13 @@ My NHS Pension
     </div>
     <!--End NHS logo-->
 
+    <!--Start My NHS Pension logo-->
+    <div class="nhsuk-header__content " id="content-header">
+        <!-- <img src="/images/my-nhs-pension-logo.png"> -->
+          <img class="mnp-header__pension-logo" src="/images/my-nhs-pension-logo.png">
+    </div>
+    <!-- End My NHS Pension logo-->
+
   </div>
 
   <nav class="nhsuk-header__navigation" id="header-navigation" role="navigation" aria-label="Primary navigation"
@@ -51,17 +50,17 @@ My NHS Pension
     <div class="nhsuk-width-container-fluid">
       <ul class="nhsuk-header__navigation-list">
         <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="">
+          <a class="nhsuk-header__navigation-link" href="index">
             Home
           </a>
         </li>
         <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="">
+          <a class="nhsuk-header__navigation-link" href="contacts">
             Contacts
           </a>
         </li>
         <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="">
+          <a class="nhsuk-header__navigation-link" href="help-information">
             Help and information
           </a>
         </li>
@@ -71,12 +70,12 @@ My NHS Pension
           </a>
         </li>
         <li class="nhsuk-header__navigation-item">
-          <a class="nhsuk-header__navigation-link" href="">
+          <a class="nhsuk-header__navigation-link" href="registration/before-you-start">
             Register
           </a>
         </li>
-        <li><a href=""><button class="nhsuk-button nhsuk-button--reverse mnp-login-btn">
-              Login
+        <li><a href="sign-in"><button class="nhsuk-button nhsuk-button--reverse mnp-login-btn">
+              Sign in
             </button></a></li>
       </ul>
     </div>
@@ -96,11 +95,19 @@ My NHS Pension
           <h2 class="nhsuk-u-visually-hidden">Additional links</h2>
           <ul class="nhsuk-footer__list">
             <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="">Accessibility</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/cookies" target="_blank">Cookies</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/accessibility-statement-nhs-business-services-authority-website" target="_blank">Privacy</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions" target="_blank">Terms & Conditions</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="https://www.nhsbsa.nhs.uk/contact-us/freedom-information" target="_blank">Freedom of Information</a></li>
-            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="">Cookie Preferences</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link"
+                href="https://www.nhsbsa.nhs.uk/our-policies/cookies" target="_blank">Cookies</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link"
+                href="https://www.nhsbsa.nhs.uk/accessibility-statement-nhs-business-services-authority-website"
+                target="_blank">Privacy</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link"
+                href="https://www.nhsbsa.nhs.uk/our-policies/terms-and-conditions" target="_blank">Terms &
+                Conditions</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link"
+                href="https://www.nhsbsa.nhs.uk/contact-us/freedom-information" target="_blank">Freedom of
+                Information</a></li>
+            <li class="nhsuk-footer__list-item"><a class="nhsuk-footer__list-item-link" href="">Cookie Preferences</a>
+            </li>
           </ul>
           <p class="nhsuk-footer__copyright">&copy; Crown copyright</p>
         </div>

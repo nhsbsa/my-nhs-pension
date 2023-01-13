@@ -1,0 +1,99 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full-transactional.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+
+
+<!-- Start of content -->
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-two-thirds">
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-full ">
+          <div class="nhsuk-back-link">
+              <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                      <path
+                          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                      </path>
+                  </svg>
+                  Go back</a>
+          </div>
+
+          <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
+                        class="nhsuk-u-visually-hidden">-</span></span></span>
+            Initial setup - SMS
+        </h1>
+
+        <p>A code has been sent to the mobile number you provided.</p>
+
+    <form action="2fa-setup-recovery-codes" method="post">
+
+        <div class="nhsuk-form-group">
+            <label class="nhsuk-label" for="smsCode">
+              Enter the code received in the SMS message
+            </label>
+            <input class="nhsuk-input" id="smsCode" name="smsCode" type="text">
+          </div>
+
+          <details class="nhsuk-details">
+            <summary class="nhsuk-details__summary">
+              <span class="nhsuk-details__summary-text">
+                Havent received your code?
+              </span>
+            </summary>
+            <div class="nhsuk-details__text">
+
+              <p>The code can take up to xxx minutes to arrive. If you haven't received your code within this time you should....</p>
+          
+            </div>
+          </details>
+
+
+    <button class="nhsuk-button" type="submit">
+      Continue
+    </button>
+
+</form>
+
+  </div>
+
+</div>
+
+
+<!-- End of content -->
+
+
+{% endblock %}

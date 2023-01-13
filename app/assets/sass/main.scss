@@ -14,17 +14,36 @@
 }
 
 
-.nhsuk-header__content {
-    float: left;
+.mnp-header__content {
+     float: left;
+ }
+
+ .mnp-header__logo {
+   float: right;
+ }
+
+.mnp-header__pension-logo {
+  height: 50px;
+  display: block;
+  margin-top: -6px;
 }
 
-.nhsuk-header__logo {
-    float: right;
+.mnp-header__container
+{
+  padding-top: 20px;
+  padding-bottom: 0;
 }
 
-.nhsuk-header__navigation-list {
-    border-top: 0;
+.mnp-header-transactional {
+  min-height: 140px;
 }
+
+
+
+// .nhsuk-header__navigation-list {
+//     border-top: 0;
+    
+// }
 
 .nhsuk-header__navigation {
     max-width: 100%;
@@ -32,6 +51,7 @@
 
 .nhsuk-header__navigation-list {
     justify-content: flex-end;
+    margin-top: 10px;
 }
 
 .mnp-main-wrapper-padding {
@@ -52,6 +72,7 @@
 .mnp-login-btn {
     font-size: 0.9em;
     margin-bottom: 18px;
+    margin-top: 6px;
     padding-top: 6px;
     padding-bottom: 6px;
 }
@@ -320,7 +341,7 @@ body {
 }
 //End of live login/registration pages
 
-// Start of stepper
+// Start of vertical stepper
 /***** Step by step navigation ******/
 
 .app-step-nav-header {
@@ -456,8 +477,8 @@ body {
       border-left: solid 2px #768692;
       background: #ffffff;
       left: 0;
-      margin-left: 12px;
-      top: 16px; }
+      margin-left: 17px;
+      top: 22px; }
     @media (min-width: 40.0625em) {
       .app-step-nav--large .app-step-nav__step {
         padding-left: 64px; }
@@ -473,10 +494,11 @@ body {
     z-index: 6;
     bottom: 0;
     left: 0;
-    margin-left: 6.5px;
+    margin-left: 11px;
     width: 13px;
     height: 0;
-    border-bottom: solid 2px #768692; }
+    border-bottom: solid 2px #768692;
+ }
   
   .app-step-nav__step:last-child:after {
     height: -webkit-calc(100% - 16px);
@@ -502,10 +524,10 @@ body {
     box-sizing: border-box;
     position: absolute;
     z-index: 5;
-    top: 16px;
+    top: 14px;
     left: 0;
-    width: 26px;
-    height: 26px;
+    width: 36px;
+    height: 36px;
     color: #212b32;
     background: #f0f4f5;
     border-radius: 100px;
@@ -517,18 +539,18 @@ body {
         height: 35px; } }
   
   .app-step-nav__circle--number {
-    font-size: 16px;
+    font-size: 18px;
     font-weight: bold;
     line-height: 23px;
     border: solid 2px #768692; }
     @media (min-width: 40.0625em) {
       .app-step-nav__circle--number {
-        font-size: 16px;
-        line-height: 23px; } }
+        font-size: 20px;
+        line-height: 31px; } }
     .app-step-nav--large .app-step-nav__circle--number {
       font-size: 16px;
       font-weight: bold;
-      line-height: 23px; }
+      line-height: 31px; }
       @media (min-width: 40.0625em) {
         .app-step-nav--large .app-step-nav__circle--number {
           font-size: 19px;
@@ -870,6 +892,26 @@ body {
   
   .app-related-items .nhsuk-list > li {
     margin-bottom: 8px; }
+
+
+    .js-step-title-to-do {
+      font-weight: normal;
+    }
+
+    .js-step-title-complete {
+
+      color: #004c23;
+    }
+
+    .app-step-nav__step:last-child:before {
+      content: none;
+    }
+
+    .app-step-nav__step:last-child:after {
+      content: none;
+    }
+
+
   
     /***** Step by step navigation END ******/
 // End of stepper

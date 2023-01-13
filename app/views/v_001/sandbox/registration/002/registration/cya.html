@@ -1,0 +1,530 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+<!-- <script src="/js/step-by-step-nav.js"></script>
+     <script type="text/javascript">
+       var $element = $('#step-by-step-navigation')
+       var stepByStepNavigation = new NHSUK.Modules.AppStepNav()
+       stepByStepNavigation.start($element)
+     </script> -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full-transactional.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+        <!-- Start of content -->
+
+        <div class="nhsuk-grid-row">
+            <div class="nhsuk-grid-column-full ">
+                <div class="nhsuk-back-link">
+                    <a class="nhsuk-back-link__link" href="javascript:history.back()">
+                        <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
+                            <path
+                                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+                            </path>
+                        </svg>
+                        Go back</a>
+                </div>
+
+
+
+                <div class="nhsuk-grid-row">
+                    <div class="nhsuk-grid-column-two-thirds">
+
+
+
+                        <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+                            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
+                                        class="nhsuk-u-visually-hidden">-</span></span></span>
+                            Check your answers
+                        </h1>
+
+                        <form action="confirmation" method="post">
+
+                            <h2 class="nhsuk-heading-s">Identification details</h2>
+
+                            <dl class="nhsuk-summary-list nhsuk-u-width-three-quarters">
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Registration code
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['registrationCode'] %}
+                                        {{ data['registrationCode']}} 
+                                        {% else %}
+                                        AHJIRU
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="identification-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> registration code</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Personal identification code
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['pin'] %}
+                                        {{ data['pin']}} 
+                                        {% else %}
+                                        0ejkUDH
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="identification-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> personal identification code</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+
+
+                            </dl>
+
+
+                            <h2 class="nhsuk-heading-s">Personal details</h2>
+
+                            <dl class="nhsuk-summary-list nhsuk-u-width-three-quarters">
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        First name
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['firstname'] %}
+                                        {{ data['firstname']}} 
+                                        {% else %}
+                                        John
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="personal-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> first name</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Date of birth
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        <p>-</p>
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="#">
+                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Pension SD reference number
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['memberNo'] %}
+                                        {{ data['memberNo']}} 
+                                        {% else %}
+                                        78364736
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="personal-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> member number</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        National Insurance number
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['nino'] %}
+                                        {{ data['nino']}} 
+                                        {% else %}
+                                        JM 78 67 89 A
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="personal-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> National insurance number</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+
+
+                            </dl>
+
+                            <h2 class="nhsuk-heading-s">Account details</h2>
+
+                            <dl class="nhsuk-summary-list nhsuk-u-width-three-quarters">
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Username
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['username'] %}
+                                        {{ data['username']}} 
+                                        {% else %}
+                                        johnsmith123
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="account-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> username</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Password
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        ******
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="account-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> password</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Email address
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['email'] %}
+                                        {{ data['email']}} 
+                                        {% else %}
+                                        johnsmith@gmail.com
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="#">
+                                            Change<span class="nhsuk-u-visually-hidden"> email address</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                            </dl>
+
+                            <h2 class="nhsuk-heading-s">Security details</h2>
+
+                            <dl class="nhsuk-summary-list nhsuk-u-width-three-quarters">
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Question 1
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityQu1'] %}
+                                        {{ data['securityQu1']}} 
+                                        {% else %}
+                                        What is the middle name of your oldest child?
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 1</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Answer 1
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityAnswer1'] %}
+                                        {{ data['securityAnswer1']}} 
+                                        {% else %}
+                                        Maria
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 1</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Question 2
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityQu2'] %}
+                                        {{ data['securityQu2']}} 
+                                        {% else %}
+                                        What is the name of your favourite childhood teacher?
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 2</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Answer 2
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityAnswer2'] %}
+                                        {{ data['securityAnswer2']}} 
+                                        {% else %}
+                                        Mrs Whitlock
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 2</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Question 3
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityQu3'] %}
+                                        {{ data['securityQu3']}} 
+                                        {% else %}
+                                        What is your grandmother's first name?
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security question 3</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                                <div class="nhsuk-summary-list__row">
+                                    <dt class="nhsuk-summary-list__key">
+                                        Answer 3
+                                    </dt>
+                                    <dd class="nhsuk-summary-list__value">
+                                        {% if data['securityAnswer3'] %}
+                                        {{ data['securityAnswer3']}} 
+                                        {% else %}
+                                        Madalynn
+                                        {% endif %}
+                                    </dd>
+                                    <dd class="nhsuk-summary-list__actions">
+                                        <a href="security-details">
+                                            Change<span class="nhsuk-u-visually-hidden"> security answer 3</span>
+                                        </a>
+                                    </dd>
+                                </div>
+
+                            </dl>
+
+                            <button class="nhsuk-button" type="submit">
+                                Submit
+                            </button>
+
+                        </form>
+
+                        <p><a class="nhsuk-link--no-visited-state" href="../index">Cancel</a></p>
+
+
+
+
+                    </div>
+
+                    <!-- start of stepper-->
+                    <div class="nhsuk-grid-column-one-third">
+
+                        <div id="step-by-step-navigation" class="app-step-nav app-step-nav--active"
+                            data-show-text="Show" data-hide-text="Hide" data-show-all-text="Show all"
+                            data-hide-all-text="Hide all">
+                            <ol class="app-step-nav__steps">
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="find-out-if-you-can-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="1">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step 1 complete</span> 
+                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
+                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+                                                          </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title js-step-title-complete">
+                                                Identification details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-find-out-if-you-can-get-help-to-buy-food-and-milk-1">
+                                        <!-- <p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> main details</span></a></p> -->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step js-step app-step-nav__step--active"
+                                    id="apply-to-get-help-to-buy-food-and-milk">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="2">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step 2 complete</span> 
+                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
+                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+                                                          </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title js-step-title-complete">
+                                                Personal details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-apply-to-get-help-to-buy-food-and-milk-2">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> contact details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="check-what-food-and-milk-you-can-buy">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="3">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step 3 complete</span> 
+                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
+                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+                                                          </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title js-step-title-complete">
+                                                Account details
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-check-what-food-and-milk-you-can-buy-3">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> payment details</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step 4 complete</span> 
+                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
+                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
+                                                          </svg>
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title js-step-title-complete">
+                                                Security questions
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                                <li class="app-step-nav__step js-step app-step-nav__step--active"
+                                    id="activating-and-using-your-card">
+                                    <div class="app-step-nav__header js-toggle-panel" data-position="4">
+                                        <h2 class="app-step-nav__title">
+                                            <span class="app-step-nav__circle app-step-nav__circle--number">
+                                                <span class="app-step-nav__circle-inner">
+                                                    <span class="app-step-nav__circle-background">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 5
+                                                    </span>
+                                                </span>
+                                            </span>
+
+                                            <span class="js-step-title">
+                                                Check your answers
+                                            </span>
+                                        </h2>
+                                    </div>
+
+                                    <div class="app-step-nav__panel js-panel"
+                                        id="step-panel-activating-and-using-your-card-4">
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> notes</span></a></p>-->
+                                    </div>
+
+                                </li>
+
+                            </ol>
+                        </div>
+
+                    </div>
+                    <!-- end of stepper -->
+
+                </div>
+            </div>
+        </div>
+
+        <!-- End of content -->
+
+    </div>
+</div>
+{% endblock %}
