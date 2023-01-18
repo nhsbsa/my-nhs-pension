@@ -38,15 +38,33 @@ My NHS Pension
 <div class="nhsuk-grid-row">
   <div class="nhsuk-grid-column-two-thirds">
 
-    <form action="" method="post">
+    <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+      <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
+                  class="nhsuk-u-visually-hidden">-</span></span></span>
+      Initial setup - Authenticator app
+  </h1>
+
+  <p>You have chosen to use an Authenticator app to authenticate your log-in. Please follow the steps below:</p>
+  <ol>
+    <li>If the Authenticator app has an option to scan a QR code, scan the code below</li>
+    <li>Enter the code from the Authenticator app</li>
+  </ol>
+
+  <form action="2fa-setup-recovery-codes" method="post">
+
+    <div class="nhsuk-form-group">
+        <label class="nhsuk-label" for="appCode">
+          Six-digit code from the Authenticator app
+        </label>
+        <input class="nhsuk-input" id="appCode" name="appCode" type="text">
+      </div>
 
 
 
 
-
-    <button class="nhsuk-button" type="submit">
-      Continue
-    </button>
+<button class="nhsuk-button" type="submit">
+  Continue
+</button>
 
 </form>
 

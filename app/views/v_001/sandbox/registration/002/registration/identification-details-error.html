@@ -50,66 +50,99 @@ My NHS Pension
                         Go back</a>
                 </div>
 
-
-
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
 
+                        <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+                            aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                            <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                                There is a problem
+                            </h2>
+                            <div class="nhsuk-error-summary__body">
+                                <ul class="nhsuk-list nhsuk-error-summary__list">
 
+                                    {% if data['registrationCode'] === '' %}
+                                    <li>
+                                        <a href="#registrationCode">Enter your registration code</a>
+                                    </li>
+                                    {% endif %}
+
+                                    {% if data['pin'] === '' %}
+                                    <li>
+                                        <a href="#pin">Enter your personal identification code</a>
+                                    </li>
+                                    {% endif %}
+
+                                </ul>
+                            </div>
+                        </div>
 
                         <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
                             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
                                         class="nhsuk-u-visually-hidden">-</span></span></span>
-                            Account details
+                            Identification details
                         </h1>
 
-                        <form action="account-details-check" method="post">
+                        <form action="identification-details-check" method="post">
 
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="username">
-                                    Username
+                            <div
+                                class="nhsuk-form-group {% if data['registrationCode'] === '' %}nhsuk-form-group--error{% endif %}">
+                                <label class="nhsuk-label" for="registrationCode">
+                                    Registration code
                                 </label>
-                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Your username can be made up of letters and
-                                    numbers but no spaces
+                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="registrationCode-hint-text">
+                                    For example, AHJIRU
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="username" name="username"
-                                    type="text" value="{% if data['username'] %}{{ data['username']}} {% endif %}">
+                                {% if data['registrationCode'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your registration code
+                                </span>
+                                {% endif %}
+                                <input
+                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if data['registrationCode'] === '' %}nhsuk-input--error{% endif %}"
+                                    id="registrationCode" name="registrationCode" type="text"
+                                    value="{% if data['registrationCode'] %}{{ data['registrationCode']}} {% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="password">
-                                    Password
+                            <div class="nhsuk-form-group {% if data['pin'] === '' %}nhsuk-form-group--error{% endif %}">
+                                <label class="nhsuk-label" for="pin">
+                                    Personal identification code
                                 </label>
-                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Your password needs to be a minimum of 12 characters and contain at least one upper
-                                    and lower case character
+                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="pin-hint-text">
+                                    For example, 0ejkUDH
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password"
-                                    type="password" value="{% if data['password'] %}{{ data['password']}} {% endif %}">
+                                {% if data['pin'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your personal
+                                    identification code
+                                </span>
+                                {% endif %}
+                                <input
+                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if data['pin'] === '' %}nhsuk-input--error{% endif %}"
+                                    id="pin" name="pin" type="text"
+                                    value="{% if data['pin'] %}{{ data['pin']}} {% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="passwordConfirm">
-                                    Confirm password
-                                </label>
-                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Retype your password
-                                </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="passwordConfirm" name="passwordConfirm"
-                                    type="password" value="{% if data['passwordConfirm'] %}{{ data['passwordConfirm']}} {% endif %}">
-                            </div>
+                            <details class="nhsuk-details nhsuk-u-margin-bottom-9">
+                                <summary class="nhsuk-details__summary">
+                                    <span class="nhsuk-details__summary-text">
+                                        How to find your information
+                                    </span>
+                                </summary>
+                                <div class="nhsuk-details__text">
+                                    <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Registration code</h2>
+                                    <p>A 6 character code found on the document attached to your invitation email, for
+                                        example AHJIRU
+                                    </p>
+                                    <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
+                                    <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Personal identification code
+                                    </h2>
+                                    <p>An 8 character alphanumeric code found on the document attached to your
+                                        invitation letter, for
+                                        example 0ejkUDH4</p>
 
-                            <div class="nhsuk-form-group">
-                                <label class="nhsuk-label" for="email">
-                                    Email address
-                                </label>
-                                <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Use your personal email address where possible
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="email" name="email"
-                                    type="text" value="{% if data['email'] %}{{ data['email']}} {% endif %}">
-                            </div>
+                            </details>
 
                             <button class="nhsuk-button" type="submit">
                                 Continue
@@ -118,9 +151,6 @@ My NHS Pension
                         </form>
 
                         <p><a class="nhsuk-link--no-visited-state" href="../index">Cancel</a></p>
-
-
-
 
                     </div>
 
@@ -138,15 +168,12 @@ My NHS Pension
                                             <span class="app-step-nav__circle app-step-nav__circle--number">
                                                 <span class="app-step-nav__circle-inner">
                                                     <span class="app-step-nav__circle-background">
-                                                        <span class="nhsuk-u-visually-hidden">Step 1 complete</span>
-                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
-                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-                                                          </svg>
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 1
                                                     </span>
                                                 </span>
                                             </span>
 
-                                            <span class="js-step-title js-step-title-complete">
+                                            <span class="js-step-title">
                                                 Identification details
                                             </span>
                                         </h2>
@@ -154,27 +181,24 @@ My NHS Pension
 
                                     <div class="app-step-nav__panel js-panel"
                                         id="step-panel-find-out-if-you-can-get-help-to-buy-food-and-milk-1">
-                                        <!-- <p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> main details</span></a></p> -->
+                                        <!--<p class="app-step-nav__paragraph"><a href="#">Change<span class="nhsuk-u-visually-hidden"> main details</span></a></p>-->
                                     </div>
 
                                 </li>
 
-                                <li class="app-step-nav__step js-step js-step app-step-nav__step--active"
+                                <li class="app-step-nav__step js-step js-step"
                                     id="apply-to-get-help-to-buy-food-and-milk">
                                     <div class="app-step-nav__header js-toggle-panel" data-position="2">
                                         <h2 class="app-step-nav__title">
                                             <span class="app-step-nav__circle app-step-nav__circle--number">
                                                 <span class="app-step-nav__circle-inner">
-                                                    <span class="app-step-nav__circle-background">
-                                                        <span class="nhsuk-u-visually-hidden">Step 2 complete</span>
-                                                        <svg class="nhsuk-icon nhsuk-icon__tick" xmlns="http://www.w3.org/2000/svg" viewBox="-3 -1 28 28" fill="none" aria-hidden="true" width="34" height="34">
-                                                            <path stroke-width="4" stroke-linecap="round" d="M18.4 7.8l-8.5 8.4L5.6 12" stroke="#007f3b"></path>
-                                                          </svg>
+                                                    <span class="app-step-nav__circle-background js-step-title-to-do">
+                                                        <span class="nhsuk-u-visually-hidden">Step</span> 2
                                                     </span>
                                                 </span>
                                             </span>
 
-                                            <span class="js-step-title js-step-title-complete">
+                                            <span class="js-step-title js-step-title-to-do">
                                                 Personal details
                                             </span>
                                         </h2>
@@ -187,19 +211,18 @@ My NHS Pension
 
                                 </li>
 
-                                <li class="app-step-nav__step js-step app-step-nav__step--active"
-                                    id="check-what-food-and-milk-you-can-buy">
+                                <li class="app-step-nav__step js-step" id="check-what-food-and-milk-you-can-buy">
                                     <div class="app-step-nav__header js-toggle-panel" data-position="3">
                                         <h2 class="app-step-nav__title">
                                             <span class="app-step-nav__circle app-step-nav__circle--number">
                                                 <span class="app-step-nav__circle-inner">
-                                                    <span class="app-step-nav__circle-background">
+                                                    <span class="app-step-nav__circle-background js-step-title-to-do">
                                                         <span class="nhsuk-u-visually-hidden">Step</span> 3
                                                     </span>
                                                 </span>
                                             </span>
 
-                                            <span class="js-step-title">
+                                            <span class="js-step-title js-step-title-to-do">
                                                 Account details
                                             </span>
                                         </h2>

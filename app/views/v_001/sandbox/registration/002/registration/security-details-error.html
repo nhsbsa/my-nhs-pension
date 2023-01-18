@@ -53,25 +53,82 @@ My NHS Pension
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
 
+                        <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+                        aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
+
+                        <div class="nhsuk-error-summary__body">
+                            <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                                {% if data['securityQu1'] === '' %}
+                                <li>
+                                    <a href="#securityQu1">Select your first question</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['securityAnswer1'] === '' %}
+                                <li>
+                                    <a href="#securityAnswer1">Enter your answer to the first question</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['securityQu2'] === '' %}
+                                <li>
+                                    <a href="#securityQu2">Select your second question</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['securityAnswer2'] === '' %}
+                                <li>
+                                    <a href="#securityAnswer2">Enter your answer to the second question</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['securityQu3'] === '' %}
+                                <li>
+                                    <a href="#securityQu3">Select your third question</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['securityAnswer3'] === '' %}
+                                <li>
+                                    <a href="#securityAnswer3">Enter your answer to the third question</a>
+                                </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                    </div>
+
+
+
                         <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
                             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
                                         class="nhsuk-u-visually-hidden">-</span></span></span>
                             Security details
                         </h1>
 
-                        <form action="security-details-check" method="post">
+                        <form action="cya" method="post">
 
                             <p class="nhsuk-u-width-three-quarters">Select 3 different security questions and provide
                                 answers for each</p>
 
                             <h2 class="nhsuk-heading-m">Security question 1</h2>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityQu1'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="securityQu1">
                                     Question 1
                                 </label>
-                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu1"
+                                {% if data['securityQu1'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Select your first question
+                                </span>
+                                {% endif %}
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters {% if data['securityQu1'] === '' %}nhsuk-select--error{% endif %}" id="securityQu1"
                                     name="securityQu1">
+                                    
 
                                     {% if data['securityQu1'] %} 
                                     <option value="{{ data['securityQu1']}}" selected>{{ data['securityQu1']}}</option>
@@ -121,21 +178,31 @@ My NHS Pension
                                     <option value="Who was your childhood hero?">Who was your childhood hero?</option>
                                 </select>
                             </div>
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityAnswer1'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="securityAnswer1">
                                     Answer 1
                                 </label>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer1"
-                                    name="securityAnswer1" type="text" value="{% if data['securityAnswer1'] %}{{ data['securityAnswer1']}}{% endif %}">
+                                {% if data['securityAnswer1'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your answer to the first question
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['securityAnswer1'] === '' %}nhsuk-input--error{% endif %}" id="securityAnswer1"
+                                    name="securityAnswer1" type="text" value="{% if data['securityAnswer1'] %}{{ data['securityAnswer1']}} {% endif %}">
                             </div>
                             <br />
                             <h2 class="nhsuk-heading-m">Security question 2</h2>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityQu2'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="securityQu2">
                                     Question 2
                                 </label>
-                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu2"
+                                {% if data['securityQu2'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Select your second question
+                                </span>
+                                {% endif %}
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters {% if data['securityQu2'] === '' %}nhsuk-select--error{% endif %}" id="securityQu1" id="securityQu2"
                                     name="securityQu2">
 
                                     {% if data['securityQu2'] %} 
@@ -186,24 +253,34 @@ My NHS Pension
                                     <option value="Who was your childhood hero?">Who was your childhood hero?</option>
                                 </select>
                             </div>
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityAnswer2'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="securityAnswer2">
                                     Answer 2
                                 </label>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer2"
-                                    name="securityAnswer2" type="text" value="{% if data['securityAnswer2'] %}{{ data['securityAnswer2']}}{% endif %}">
+                                {% if data['securityAnswer2'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your answer to the second question
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['securityAnswer2'] === '' %}nhsuk-input--error{% endif %}" id="securityAnswer2"
+                                    name="securityAnswer2" type="text" value="{% if data['securityAnswer2'] %}{{ data['securityAnswer2']}} {% endif %}">
                             </div>
                             <br />
                             <h2 class="nhsuk-heading-m">Security question 3</h2>
 
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityQu3'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label " for="securityQu3">
                                     Question 3
                                 </label>
-                                <select class="nhsuk-select nhsuk-u-width-three-quarters" id="securityQu3"
+                                {% if data['securityQu3'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Select your third question
+                                </span>
+                                {% endif %}
+                                <select class="nhsuk-select nhsuk-u-width-three-quarters {% if data['securityQu3'] === '' %}nhsuk-select--error{% endif %}" id="securityQu1" id="securityQu3"
                                     name="securityQu3">
-                                    
+                                  
                                     {% if data['securityQu3'] %} 
                                     <option value="{{ data['securityQu3']}}" selected>{{ data['securityQu3']}}</option>
                                     {% else %}
@@ -253,13 +330,19 @@ My NHS Pension
                                 </select>
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['securityAnswer3'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="securityAnswer3">
                                     Answer 3
                                 </label>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="securityAnswer3"
-                                    name="securityAnswer3" type="text" value="{% if data['securityAnswer3'] %}{{ data['securityAnswer3']}}{% endif %}">
+                                {% if data['securityAnswer3'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your answer to the third question
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['securityAnswer3'] === '' %}nhsuk-input--error{% endif %}" id="securityAnswer3"
+                                    name="securityAnswer3" type="text" value="{% if data['securityAnswer3'] %}{{ data['securityAnswer3']}} {% endif %}">
                             </div>
+
 
 
                             <button class="nhsuk-button" type="submit">
@@ -269,6 +352,9 @@ My NHS Pension
                         </form>
 
                         <p><a class="nhsuk-link--no-visited-state" href="../index">Cancel</a></p>
+
+
+
 
                     </div>
 

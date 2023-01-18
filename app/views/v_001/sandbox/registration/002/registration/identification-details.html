@@ -41,8 +41,11 @@ My NHS Pension
       <div class="nhsuk-grid-column-full ">
         <div class="nhsuk-back-link">
           <a class="nhsuk-back-link__link" href="javascript:history.back()">
-            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-              <path d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z"></path>
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true" height="24" width="24">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
             </svg>
             Go back</a>
         </div>
@@ -51,7 +54,7 @@ My NHS Pension
 
         <div class="nhsuk-grid-row">
           <div class="nhsuk-grid-column-two-thirds">
-            
+
 
 
             <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
@@ -60,8 +63,8 @@ My NHS Pension
               Identification details
             </h1>
 
-           
-            <form action="personal-details" method="post">
+
+            <form action="identification-details-check" method="post">
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="registrationCode">
@@ -70,7 +73,8 @@ My NHS Pension
                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="registrationCode-hint-text">
                   For example, AHJIRU
                 </div>
-                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="registrationCode" name="registrationCode" type="text">
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="registrationCode" name="registrationCode"
+                  type="text" value="{% if data['registrationCode'] %}{{ data['registrationCode']}} {% endif %}">
               </div>
 
               <div class="nhsuk-form-group">
@@ -80,7 +84,8 @@ My NHS Pension
                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="pin-hint-text">
                   For example, 0ejkUDH
                 </div>
-                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="pin" name="pin" type="text">
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="pin" name="pin" type="text"
+                  value="{% if data['pin'] %}{{ data['pin']}} {% endif %}">
               </div>
 
               <details class="nhsuk-details nhsuk-u-margin-bottom-9">
@@ -95,7 +100,9 @@ My NHS Pension
                   </p>
                   <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
                   <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Personal identification code</h2>
-                  <p>An alphanumeric code found on the document attached to your invitation letter, for example 0ejkUDH</p>
+                  <p>An 8 character alphanumeric code found on the document attached to your invitation letter, for
+                    example 0ejkUDH4</p>
+
                 </div>
               </details>
 

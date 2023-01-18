@@ -60,7 +60,7 @@ My NHS Pension
               Personal details
             </h1>
 
-            <form action="account-details" method="post">
+            <form action="personal-details-check" method="post">
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="firstname">
@@ -69,7 +69,7 @@ My NHS Pension
                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="fistname-hint-text">
                     For example, John
                   </div>
-                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstname" name="firstname" type="text">
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="firstname" name="firstname" type="text" value="{% if data['firstname'] %}{{ data['firstname']}} {% endif %}">
               </div>
 
               <div class="nhsuk-form-group">
@@ -86,26 +86,29 @@ My NHS Pension
                   <div class="nhsuk-date-input" id="example">
                     <div class="nhsuk-date-input__item">
                       <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-day">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dobDD">
                           Day
                         </label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-day" name="dob-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dobDD" name="dobDD" type="text" pattern="[0-9]*" inputmode="numeric"
+                        value="{% if data['dobDD'] %}{{ data['dobDD']}}{% endif %}">
                       </div>
                     </div>
                     <div class="nhsuk-date-input__item">
                       <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-month">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dobMM">
                           Month
                         </label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dob-month" name="dob-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-2" id="dobMM" name="dobMM" type="text" pattern="[0-9]*" inputmode="numeric"
+                        value="{% if data['dobMM'] %}{{ data['dobMM']}}{% endif %}">
                       </div>
                     </div>
                     <div class="nhsuk-date-input__item">
                       <div class="nhsuk-form-group">
-                        <label class="nhsuk-label nhsuk-date-input__label" for="dob-year">
+                        <label class="nhsuk-label nhsuk-date-input__label" for="dobYYYY">
                           Year
                         </label>
-                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dob-year" name="dob-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        <input class="nhsuk-input nhsuk-date-input__input nhsuk-input--width-4" id="dobYYYY" name="dobYYYY" type="text" pattern="[0-9]*" inputmode="numeric"
+                        value="{% if data['dobYYYY'] %}{{ data['dobYYYY']}}{% endif %}">
                       </div>
                     </div>
                   </div>
@@ -115,12 +118,12 @@ My NHS Pension
 
               <div class="nhsuk-form-group">
                 <label class="nhsuk-label" for="memberNo">
-                  Pension SD reference number
+                  Member number
                 </label>
                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="memberNo-hint-text">
                   For example, 78364736
                 </div>
-                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="memberNo" name="memberNo" type="text">
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="memberNo" name="memberNo" type="text" value="{% if data['memberNo'] %}{{ data['memberNo']}} {% endif %}">
               </div>
 
               <div class="nhsuk-form-group">
@@ -130,7 +133,7 @@ My NHS Pension
                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="nino-hint-text">
                   For example, JM 78 67 89 A
                 </div>
-                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="nino" name="nino" type="text">
+                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="nino" name="nino" type="text" value="{% if data['nino'] %}{{ data['nino']}} {% endif %}">
               </div>
 
               <details class="nhsuk-details nhsuk-u-margin-bottom-9">
@@ -141,10 +144,18 @@ My NHS Pension
                 </summary>
                 <div class="nhsuk-details__text">
 
-                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Pension SD reference number</h2>
-                  <p>An 8 digit number found in the filename of the document attached to your invitation letter, for example 78364736</p>
+                  <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">Member number</h2>
+                  <p>An 8 digit code, for example
+                    78364736</p>
+                    <p>You may be able to find it on your:</p>
+                    <ul>
+                      <li>payslip, listed as 'SD ref'</li>
+                      <li>current Total Rewards Statement (TRS), listed as 'member number'</li>
+                      <li>current Annual Benefit Statement (ABS), listed as 'member number'</li>
+                    </ul>
                   <hr class="nhsuk-section-break--m nhsuk-section-break--visible">
                   <h2 class="nhsuk-heading-xs nhsuk-u-margin-bottom-0">National Insurance number</h2>
+                  <p>Made up of 2 letters, 6 numbers and a final letter, for example QQ 12 34 56 A</p>
                   <p>You may be able to find it on your:</p>
                   <ul>
                     <li>payslip</li>

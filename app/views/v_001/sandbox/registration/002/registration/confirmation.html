@@ -40,8 +40,8 @@ My NHS Pension
             <h1 class="heading-xlarge">Your account has been created</h1>   
           </div>
         <h2>What happens next</h2>
-        <p>You will receive an activation link to the email address you provided when setting up your account.</p>
-        <p>Please click the link provided in the email to
+        <p>You will receive an activation link to <strong>{% if data['email'] %}{{ data['email']}}{% else %}johnsmith@gmail.com{% endif %}</strong>.</p>
+        <p>Click the link provided in the email to
             complete the account creation process. You will then be able to sign in to your My NHS Pension account.</p>
 
             <div class="nhsuk-inset-text">

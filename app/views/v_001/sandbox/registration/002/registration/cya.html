@@ -81,7 +81,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="identification-details">
+                                        <a href="identification-details#registrationCode">
                                             Change<span class="nhsuk-u-visually-hidden"> registration code</span>
                                         </a>
                                     </dd>
@@ -99,7 +99,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="identification-details">
+                                        <a href="identification-details#pin">
                                             Change<span class="nhsuk-u-visually-hidden"> personal identification code</span>
                                         </a>
                                     </dd>
@@ -126,7 +126,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="personal-details">
+                                        <a href="personal-details#firstname">
                                             Change<span class="nhsuk-u-visually-hidden"> first name</span>
                                         </a>
                                     </dd>
@@ -137,18 +137,18 @@ My NHS Pension
                                         Date of birth
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
-                                        <p>-</p>
+                                        <p> {% if data['dobDD'] %}{{ data['dobDD']}} {% else %}10{% endif %}/{% if data['dobMM'] %}{{ data['dobMM']}} {% else %}03{% endif %}/{% if data['dobYYY'] %}{{ data['dobYYY']}} {% else %}1973{% endif %}</p>
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
-                                            Change<span class="nhsuk-u-visually-hidden"> contact details</span>
+                                        <a href="personal-details#dobDD">
+                                            Change<span class="nhsuk-u-visually-hidden"> date of birth</span>
                                         </a>
                                     </dd>
                                 </div>
 
                                 <div class="nhsuk-summary-list__row">
                                     <dt class="nhsuk-summary-list__key">
-                                        Pension SD reference number
+                                        Member number
                                     </dt>
                                     <dd class="nhsuk-summary-list__value">
                                         {% if data['memberNo'] %}
@@ -158,7 +158,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="personal-details">
+                                        <a href="personal-details#memberNo">
                                             Change<span class="nhsuk-u-visually-hidden"> member number</span>
                                         </a>
                                     </dd>
@@ -176,7 +176,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="personal-details">
+                                        <a href="personal-details#nino">
                                             Change<span class="nhsuk-u-visually-hidden"> National insurance number</span>
                                         </a>
                                     </dd>
@@ -202,7 +202,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="account-details">
+                                        <a href="account-details#username">
                                             Change<span class="nhsuk-u-visually-hidden"> username</span>
                                         </a>
                                     </dd>
@@ -216,7 +216,7 @@ My NHS Pension
                                         ******
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="account-details">
+                                        <a href="account-details#password">
                                             Change<span class="nhsuk-u-visually-hidden"> password</span>
                                         </a>
                                     </dd>
@@ -234,7 +234,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="#">
+                                        <a href="account-details#email">
                                             Change<span class="nhsuk-u-visually-hidden"> email address</span>
                                         </a>
                                     </dd>
@@ -258,7 +258,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityQu1">
                                             Change<span class="nhsuk-u-visually-hidden"> security question 1</span>
                                         </a>
                                     </dd>
@@ -276,7 +276,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityAnswer1">
                                             Change<span class="nhsuk-u-visually-hidden"> security answer 1</span>
                                         </a>
                                     </dd>
@@ -294,7 +294,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityQu2">
                                             Change<span class="nhsuk-u-visually-hidden"> security question 2</span>
                                         </a>
                                     </dd>
@@ -312,7 +312,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityAnswer2">
                                             Change<span class="nhsuk-u-visually-hidden"> security answer 2</span>
                                         </a>
                                     </dd>
@@ -330,7 +330,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityQu3">
                                             Change<span class="nhsuk-u-visually-hidden"> security question 3</span>
                                         </a>
                                     </dd>
@@ -348,7 +348,7 @@ My NHS Pension
                                         {% endif %}
                                     </dd>
                                     <dd class="nhsuk-summary-list__actions">
-                                        <a href="security-details">
+                                        <a href="security-details#securityAnswer3">
                                             Change<span class="nhsuk-u-visually-hidden"> security answer 3</span>
                                         </a>
                                     </dd>

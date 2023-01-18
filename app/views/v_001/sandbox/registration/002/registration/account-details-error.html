@@ -55,7 +55,42 @@ My NHS Pension
                 <div class="nhsuk-grid-row">
                     <div class="nhsuk-grid-column-two-thirds">
 
+                        <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+                        aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+                        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
 
+                        <div class="nhsuk-error-summary__body">
+                            <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                                {% if data['username'] === '' %}
+                                <li>
+                                    <a href="#username">Enter your username</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['password'] === '' %}
+                                <li>
+                                    <a href="#password">Enter your password</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['passwordConfirm'] === '' %}
+                                <li>
+                                    <a href="#passwordConfirm">Confirm your password</a>
+                                </li>
+                                {% endif %}
+
+                                {% if data['email'] === '' %}
+                                <li>
+                                    <a href="#email">Enter your email</a>
+                                </li>
+                                {% endif %}
+
+                            </ul>
+                        </div>
+                    </div>
 
                         <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
                             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Create an account<span
@@ -65,7 +100,7 @@ My NHS Pension
 
                         <form action="account-details-check" method="post">
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['username'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="username">
                                     Username
                                 </label>
@@ -73,11 +108,16 @@ My NHS Pension
                                     Your username can be made up of letters and
                                     numbers but no spaces
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="username" name="username"
+                                {% if data['username'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your username
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['username'] === '' %}nhsuk-input--error{% endif %}" id="username" name="username"
                                     type="text" value="{% if data['username'] %}{{ data['username']}} {% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['password'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="password">
                                     Password
                                 </label>
@@ -85,29 +125,44 @@ My NHS Pension
                                     Your password needs to be a minimum of 12 characters and contain at least one upper
                                     and lower case character
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="password" name="password"
+                                {% if data['password'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your password
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['password'] === '' %}nhsuk-input--error{% endif %}" id="password" name="password"
                                     type="password" value="{% if data['password'] %}{{ data['password']}} {% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['passwordConfirm'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="passwordConfirm">
                                     Confirm password
                                 </label>
                                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
                                     Retype your password
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="passwordConfirm" name="passwordConfirm"
+                                {% if data['passwordConfirm'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Confirm your password
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['passwordConfirm'] === '' %}nhsuk-input--error{% endif %}" id="passwordConfirm" name="passwordConfirm"
                                     type="password" value="{% if data['passwordConfirm'] %}{{ data['passwordConfirm']}} {% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group">
+                            <div class="nhsuk-form-group {% if data['email'] === '' %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="email">
                                     Email address
                                 </label>
                                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
                                     Use your personal email address where possible
                                 </div>
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters" id="email" name="email"
+                                {% if data['email'] === '' %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter your email
+                                </span>
+                                {% endif %}
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['email'] === '' %}nhsuk-input--error{% endif %}" id="email" name="email"
                                     type="text" value="{% if data['email'] %}{{ data['email']}} {% endif %}">
                             </div>
 
