@@ -51,6 +51,25 @@ My NHS Pension
                   Go back</a>
           </div>
 
+
+          <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+          aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+              There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+              <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                  {% if data['smsCode'] === '' %}
+                  <li>
+                      <a href="#smsCode">Enter your verification code</a>
+                  </li>
+                  {% endif %}
+
+              </ul>
+          </div>
+      </div>
+
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
                         class="nhsuk-u-visually-hidden">-</span></span></span>
@@ -61,15 +80,19 @@ My NHS Pension
 
     <form action="2fa-setup-sms-check" method="post">
 
-        <div class="nhsuk-form-group">
+        <div class="nhsuk-form-group {% if data['smsCode'] === '' %}nhsuk-form-group--error{% endif %}">
             <label class="nhsuk-label" for="smsCode">
               Enter your verification code
             </label>
               <div class="nhsuk-hint" id="example-with-hint-text-hint">
     Your verification code will be 6 numbers
   </div>
-            
-            <input class="nhsuk-input nhsuk-input--width-10" id="smsCode" name="smsCode" type="text" inputmode="numeric">
+  {% if data['smsCode'] === '' %}
+  <span class="nhsuk-error-message" id="smsCode-error">
+      <span class="nhsuk-u-visually-hidden">Error:</span> Enter your verifcation code
+  </span>
+  {% endif %}  
+            <input class="nhsuk-input nhsuk-input--width-10 {% if data['smsCode'] === '' %}nhsuk-input--error{% endif %}" id="smsCode" name="smsCode" type="text" inputmode="numeric">
           </div>
 
           <details class="nhsuk-details">

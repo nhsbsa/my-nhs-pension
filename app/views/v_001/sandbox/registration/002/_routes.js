@@ -5,6 +5,12 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line 
 
+// Clear all data in session
+router.post('clear-data', function (req, res) {
+  req.session.data = {}
+  res.render('prototype-admin/clear-data-success')
+})
+
 // Error handling - registration
 
 // Identification details //
@@ -47,12 +53,25 @@ router.post('/security-details-check', function (req,res) {
   }
 })
 
+// 2fa - SMS verification code //
+router.post('/2fa-setup-sms-check', function (req,res) {
+
+  if(req.body.smsCode === '' ) {
+    res.redirect('2fa-setup-sms-error');
+  } else {
+    res.redirect('2fa-setup-recovery-codes');
+  }
+})
+
 
 // How would you like to setup two-factor authentication? - 2fa-setup.html
 router.post('/2fa', function (req, res) {
     var authenticationType = req.session.data['2fa']
-    if (authenticationType == "sms") {
+    if (authenticationType == "sms" && req.body.mobile !== '' ) {
       res.redirect('2fa-setup-sms')
+    }
+    else if (authenticationType == "sms" && req.body.mobile === '' ) {
+      res.redirect('2fa-setup-error')
     }
     else if (authenticationType == "app") {
       res.redirect('2fa-setup-app')

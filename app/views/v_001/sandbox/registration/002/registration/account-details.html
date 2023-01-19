@@ -71,7 +71,7 @@ My NHS Pension
                                 </label>
                                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
                                     Your username can be made up of letters and
-                                    numbers but no spaces
+                                    numbers but no spaces, up to 15 characters
                                 </div>
                                 <input class="nhsuk-input nhsuk-u-width-three-quarters" id="username" name="username"
                                     type="text" value="{% if data['username'] %}{{ data['username']}} {% endif %}">
@@ -105,7 +105,7 @@ My NHS Pension
                                     Email address
                                 </label>
                                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Use your personal email address where possible
+                                    We recommend that you use a personal email address. This way if you ever leave the NHS you will still be able to access your account.
                                 </div>
                                 <input class="nhsuk-input nhsuk-u-width-three-quarters" id="email" name="email"
                                     type="text" value="{% if data['email'] %}{{ data['email']}} {% endif %}">
