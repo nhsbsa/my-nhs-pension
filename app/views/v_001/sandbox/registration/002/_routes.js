@@ -63,6 +63,16 @@ router.post('/2fa-setup-sms-check', function (req,res) {
   }
 })
 
+// 2fa - app verification code //
+router.post('/2fa-setup-app-check', function (req,res) {
+
+  if(req.body.appCode === '' ) {
+    res.redirect('2fa-setup-app-error');
+  } else {
+    res.redirect('2fa-setup-recovery-codes');
+  }
+})
+ 
 
 // How would you like to setup two-factor authentication? - 2fa-setup.html
 router.post('/2fa', function (req, res) {
@@ -71,13 +81,13 @@ router.post('/2fa', function (req, res) {
       res.redirect('2fa-setup-sms')
     }
     else if (authenticationType == "sms" && req.body.mobile === '' ) {
-      res.redirect('2fa-setup-error')
+      res.redirect('2fa-setup-error-mobile')
     }
     else if (authenticationType == "app") {
       res.redirect('2fa-setup-app')
     }
     else {
-      res.redirect('2fa-setup')
+      res.redirect('2fa-setup-error')
     }
   })
 

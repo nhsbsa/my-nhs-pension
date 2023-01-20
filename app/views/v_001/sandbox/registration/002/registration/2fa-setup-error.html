@@ -51,6 +51,7 @@ My NHS Pension
                   Go back</a> 
           </div>
 
+
           <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
           aria-labelledby="error-summary-title" role="alert" tabindex="-1">
           <h2 class="nhsuk-error-summary__title" id="error-summary-title">
@@ -59,11 +60,10 @@ My NHS Pension
           <div class="nhsuk-error-summary__body">
               <ul class="nhsuk-list nhsuk-error-summary__list">
 
-                  {% if data['mobile'] === '' %}
                   <li>
-                      <a href="#mobile">Enter your mobile phone number</a>
+                      <a href="#2fasms">Select how you would like to setup two-factor authentication</a>
                   </li>
-                  {% endif %}
+                
 
               </ul>
           </div>
@@ -81,7 +81,7 @@ My NHS Pension
  
     <form action="2fa" method="post"> 
 
-    <div class="nhsuk-form-group">
+    <div class="nhsuk-form-group nhsuk-form-group--error">
 
       <fieldset class="nhsuk-fieldset" aria-describedby="contact-hint">
         <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--l">
@@ -90,17 +90,20 @@ My NHS Pension
           </h1>
         </legend>
 
+        <span class="nhsuk-error-message" id="example-error-error">
+          <span class="nhsuk-u-visually-hidden">Error:</span> Select an authentication method
+        </span>
 
         <div class="nhsuk-radios nhsuk-radios--conditional">
 
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="2fa-sms" name="2fa" type="radio" value="sms"
-              aria-controls="conditional-2fa-sms" aria-expanded="false" checked>
+              aria-controls="conditional-2fa-sms" aria-expanded="false">
             <label class="nhsuk-label nhsuk-radios__label" for="2fa-sms">
               SMS
             </label>
             <div class="nhsuk-hint nhsuk-radios__hint" id="2fa-sms-hint">
-              An SMS message will be sent to your mobile phone with a one-time-only code for access to the system.
+              We'll text a verification code to this mobile number whenever you sign in to your account.
             </div>
           </div>
 
@@ -110,12 +113,7 @@ My NHS Pension
               <label class="nhsuk-label" for="mobile">
                 Mobile phone number
               </label>
-              {% if data['mobile'] === '' %}
-              <span class="nhsuk-error-message" id="name-error">
-                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your mobile phone number
-              </span>
-              {% endif %}
-              <input class="nhsuk-input nhsuk-input--width-20 {% if data['mobile'] === '' %}nhsuk-input--error{% endif %}" id="mobile" name="mobile" type="text" inputmode="numeric">
+              <input class="nhsuk-input nhsuk-input--width-20" id="mobile" name="mobile" type="text" inputmode="numeric">
             </div>
 
           </div>
@@ -128,7 +126,7 @@ My NHS Pension
               Authenticator app
             </label>
             <div class="nhsuk-hint nhsuk-radios__hint" id="2fa-app-hint">
-              You will need to have an app such as Google Authenticator installed on your smartphone.
+              You will need to have an app, such as Google Authenticator, installed on your smartphone to sign in to your account.
             </div>
           </div>
 

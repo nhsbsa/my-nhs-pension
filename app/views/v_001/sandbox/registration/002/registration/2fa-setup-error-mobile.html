@@ -51,6 +51,24 @@ My NHS Pension
                   Go back</a> 
           </div>
 
+          <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+          aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+          <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+              There is a problem
+          </h2>
+          <div class="nhsuk-error-summary__body">
+              <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                  {% if data['mobile'] === '' %}
+                  <li>
+                      <a href="#mobile">Enter your mobile phone number</a>
+                  </li>
+                  {% endif %}
+
+              </ul>
+          </div>
+      </div>
+
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
                         class="nhsuk-u-visually-hidden">-</span></span></span>
@@ -77,11 +95,11 @@ My NHS Pension
 
           <div class="nhsuk-radios__item">
             <input class="nhsuk-radios__input" id="2fa-sms" name="2fa" type="radio" value="sms"
-              aria-controls="conditional-2fa-sms" aria-expanded="false">
+              aria-controls="conditional-2fa-sms" aria-expanded="false" checked>
             <label class="nhsuk-label nhsuk-radios__label" for="2fa-sms">
               SMS
             </label>
-            <div class="nhsuk-hint nhsuk-radios__hint" id="2fa-sms-hint">
+            <div class="nhsuk-hint nhsuk-radios__hint" id="2fa-sms-hint"> 
               We'll text a verification code to this mobile number whenever you sign in to your account.
             </div>
           </div>
@@ -92,7 +110,12 @@ My NHS Pension
               <label class="nhsuk-label" for="mobile">
                 Mobile phone number
               </label>
-              <input class="nhsuk-input nhsuk-input--width-20" id="mobile" name="mobile" type="text" inputmode="numeric">
+              {% if data['mobile'] === '' %}
+              <span class="nhsuk-error-message" id="name-error">
+                  <span class="nhsuk-u-visually-hidden">Error:</span> Enter your mobile phone number
+              </span>
+              {% endif %}
+              <input class="nhsuk-input nhsuk-input--width-20 {% if data['mobile'] === '' %}nhsuk-input--error{% endif %}" id="mobile" name="mobile" type="text" inputmode="numeric">
             </div>
 
           </div>

@@ -60,16 +60,16 @@ My NHS Pension
           <div class="nhsuk-error-summary__body">
               <ul class="nhsuk-list nhsuk-error-summary__list">
 
-                  {% if data['smsCode'] === '' %}
+
                   <li>
                       <a href="#smsCode">Enter your verification code</a>
                   </li>
-                  {% endif %}
+ 
 
               </ul>
           </div>
       </div>
-
+ 
           <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
             <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
                         class="nhsuk-u-visually-hidden">-</span></span></span>
@@ -82,14 +82,14 @@ My NHS Pension
 
         <div class="nhsuk-form-group {% if data['smsCode'] === '' %}nhsuk-form-group--error{% endif %}">
             <label class="nhsuk-label" for="smsCode">
-              Enter your verification code
+              Verification code
             </label>
               <div class="nhsuk-hint" id="example-with-hint-text-hint">
     Your verification code will be 6 numbers
   </div>
   {% if data['smsCode'] === '' %}
   <span class="nhsuk-error-message" id="smsCode-error">
-      <span class="nhsuk-u-visually-hidden">Error:</span> Enter your verifcation code
+      <span class="nhsuk-u-visually-hidden">Error:</span> Enter your verification code
   </span>
   {% endif %}  
             <input class="nhsuk-input nhsuk-input--width-10 {% if data['smsCode'] === '' %}nhsuk-input--error{% endif %}" id="smsCode" name="smsCode" type="text" inputmode="numeric">
@@ -103,7 +103,7 @@ My NHS Pension
             </summary>
             <div class="nhsuk-details__text">
 
-              <p>If you haven't received your code you can <a href="javascript:history.back()">go back</a> and request it be sent again or choose an alternative authenitcation method.</p>
+              <p>If you haven't received your code you can <a href="javascript:history.back()">go back</a> and request it be sent again or choose an alternative authentication method.</p>
           
             </div>
           </details>

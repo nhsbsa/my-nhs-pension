@@ -40,64 +40,85 @@ My NHS Pension
 
     <div class="nhsuk-grid-row">
       <div class="nhsuk-grid-column-full ">
-          <div class="nhsuk-back-link">
-              <a class="nhsuk-back-link__link" href="javascript:history.back()">
-                  <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24" aria-hidden="true" height="24" width="24">
-                      <path
-                          d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
-                      </path>
-                  </svg>
-                  Go back</a>
-          </div>
+        <div class="nhsuk-back-link">
+          <a class="nhsuk-back-link__link" href="javascript:history.back()">
+            <svg class="nhsuk-icon nhsuk-icon__chevron-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+              aria-hidden="true" height="24" width="24">
+              <path
+                d="M8.5 12c0-.3.1-.5.3-.7l5-5c.4-.4 1-.4 1.4 0s.4 1 0 1.4L10.9 12l4.3 4.3c.4.4.4 1 0 1.4s-1 .4-1.4 0l-5-5c-.2-.2-.3-.4-.3-.7z">
+              </path>
+            </svg>
+            Go back</a>
+        </div>
 
-          <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
-            <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
-                        class="nhsuk-u-visually-hidden">-</span></span></span>
-            Initial setup - Recovery codes
+        <h1 style="margin-bottom:12px;" class="nhsuk-heading-xl">
+          <span role="text"><span class="nhsuk-caption-l nhsuk-caption--top">Two-factor authentication<span
+                class="nhsuk-u-visually-hidden">-</span></span></span>
+          Initial setup - Recovery codes
         </h1>
-        
-        <p>Recovery codes can be used if you lose access to your two-factor authentication device. Each code can be used once. Please download these codes and store them in a safe place.</p>
-        
+
+        <p>Recovery codes can be used if you lose access to your two-factor authentication device. Each code can be used
+          once.</p>
+
         <div class="nhsuk-card">
           <div class="nhsuk-card__content">
-            <ul>
-              <li>idf78d9fseds</li>
-              <li>8k3fhdekdfje</li>
-              <li>jdi7dfhsjed6</li>
-              <li>fjd8ejfkd9er</li>
-              <li>jfkdr678rgh3</li>
-              <li>8ike6yhr73kd</li>
-              <li>3hfu773jje9o</li>
-              <li>j893hye67ej5</li>
-            </ul>
+            <p>Download these codes and store them in a safe place.</p>
 
-            <button class="nhsuk-button nhsuk-button--secondary" >
-              Download
-            </button>
+            <div class="nhsuk-grid-row">
+              <div class="nhsuk-grid-column-one-third">
+                <ul>
+                  <li>idf78d9fseds</li>
+                  <li>8k3fhdekdfje</li>
+                  <li>jdi7dfhsjed6</li>
+
+                </ul>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <ul>
+                  <li>fjd8ejfkd9er</li>
+                  <li>jfkdr678rgh3</li>
+                  <li>8ike6yhr73kd</li>
+                </ul>
+              </div>
+              <div class="nhsuk-grid-column-one-third">
+                <ul>
+                  <li>3hfu773jje9o</li>
+                  <li>j893hye67ej5</li>
+                </ul>
+              </div>
+
+            </div>
+            <a download="recovery-codes" href="/downloads/recovery-codes.txt">
+              <button class="nhsuk-button nhsuk-button--secondary" style="margin-bottom: 6px;">
+                Download recovery codes
+              </button>
+            </a>
+
           </div>
         </div>
-        
+
         <div class="nhsuk-inset-text">
           <span class="nhsuk-u-visually-hidden">Information: </span>
-          <p>Your file will automatically download in .txt format. Once you move away from this page you will not be able to download the file again.</p>
+
+          <p>Your codes will download in .txt format. Once you move away from this page you will not be able to download
+            the file again.</p>
         </div>
 
-<a href="../index">
-      <button class="nhsuk-button" >
-      Finish
-    </button>
-</a>
+        <a href="2fa-setup-confirmation">
+          <button class="nhsuk-button">
+            Finish
+          </button>
+        </a>
 
 
 
 
-  </div>
+      </div>
 
-</div>
-
-
-<!-- End of content -->
+    </div>
 
 
-{% endblock %}
+    <!-- End of content -->
+
+
+    {% endblock %}
