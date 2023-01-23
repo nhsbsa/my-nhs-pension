@@ -36,7 +36,7 @@ router.post([/personal-details-check/, /personal-details-check-error/], function
 // Account details //
 router.post([/account-details-check/, /account-details-check-error/], function (req,res) {
 
-  if(req.body.username === '' || req.body.password === '' || req.body.passwordConfirm === '' || req.body.email === '') {
+  if(req.body.username.length > 15 || req.body.password.length < 12 || req.body.passwordConfirm === '' || req.body.email === '') {
     res.redirect('account-details-error');
   } else {
     res.redirect('security-details');

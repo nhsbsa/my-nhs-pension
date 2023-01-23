@@ -58,7 +58,7 @@ My NHS Pension
                         <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
                         aria-labelledby="error-summary-title" role="alert" tabindex="-1">
                         <h2 class="nhsuk-error-summary__title" id="error-summary-title">
-                            There is a problem
+                            There is a problem 
                         </h2>
 
                         <div class="nhsuk-error-summary__body">
@@ -68,11 +68,19 @@ My NHS Pension
                                 <li>
                                     <a href="#username">Enter your username</a>
                                 </li>
+                                {% elif data['username'] | length > 15 %}
+                                <li>
+                                    <a href="#username">Enter a valid username</a>
+                                </li>
                                 {% endif %}
 
                                 {% if data['password'] === '' %}
                                 <li>
                                     <a href="#password">Enter your password</a>
+                                </li>
+                                {% elif data['password'] | length < 12 %}
+                                <li>
+                                    <a href="#password">Enter a valid password</a>
                                 </li>
                                 {% endif %}
 
@@ -100,24 +108,27 @@ My NHS Pension
 
                         <form action="account-details-check" method="post">
 
-                            <div class="nhsuk-form-group {% if data['username'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <div class="nhsuk-form-group {% if (data['username'] === '') or (data['username'] | length > 15) %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="username">
                                     Username
                                 </label>
                                 <div class="nhsuk-hint nhsuk-u-width-three-quarters" id="username-hint-text">
-                                    Your username can be made up of letters and
-                                    numbers but no spaces
+                                    Your username can be made up of letters and numbers but no spaces, up to 15 characters
                                 </div>
                                 {% if data['username'] === '' %}
                                 <span class="nhsuk-error-message" id="name-error">
                                     <span class="nhsuk-u-visually-hidden">Error:</span> Enter your username
                                 </span>
+                                {% elif data['username'] | length > 15 %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid username
+                                </span>
                                 {% endif %}
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['username'] === '' %}nhsuk-input--error{% endif %}" id="username" name="username"
-                                    type="text" value="{% if data['username'] %}{{ data['username']}} {% endif %}">
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if (data['username'] === '') or (data['username'] | length > 15) %}nhsuk-input--error{% endif %}" id="username" name="username"
+                                    type="text" value="{% if data['username'] %}{{ data['username']}}{% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group {% if data['password'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <div class="nhsuk-form-group {% if (data['password'] === '') or (data['password'] | length < 12) %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="password">
                                     Password
                                 </label>
@@ -129,9 +140,13 @@ My NHS Pension
                                 <span class="nhsuk-error-message" id="name-error">
                                     <span class="nhsuk-u-visually-hidden">Error:</span> Enter your password
                                 </span>
+                                {% elif data['password'] | length < 12 %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid password
+                                </span>
                                 {% endif %}
-                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['password'] === '' %}nhsuk-input--error{% endif %}" id="password" name="password"
-                                    type="password" value="{% if data['password'] %}{{ data['password']}} {% endif %}">
+                                <input class="nhsuk-input nhsuk-u-width-three-quarters {% if (data['password'] === '') or (data['password'] | length < 12) %}nhsuk-input--error{% endif %}" id="password" name="password"
+                                    type="password" value="{% if data['password'] %}{{ data['password']}}{% endif %}">
                             </div>
 
                             <div class="nhsuk-form-group {% if data['passwordConfirm'] === '' %}nhsuk-form-group--error{% endif %}">
@@ -147,7 +162,7 @@ My NHS Pension
                                 </span>
                                 {% endif %}
                                 <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['passwordConfirm'] === '' %}nhsuk-input--error{% endif %}" id="passwordConfirm" name="passwordConfirm"
-                                    type="password" value="{% if data['passwordConfirm'] %}{{ data['passwordConfirm']}} {% endif %}">
+                                    type="password" value="{% if data['passwordConfirm'] %}{{ data['passwordConfirm']}}{% endif %}">
                             </div>
 
                             <div class="nhsuk-form-group {% if data['email'] === '' %}nhsuk-form-group--error{% endif %}">
@@ -163,7 +178,7 @@ My NHS Pension
                                 </span>
                                 {% endif %}
                                 <input class="nhsuk-input nhsuk-u-width-three-quarters {% if data['email'] === '' %}nhsuk-input--error{% endif %}" id="email" name="email"
-                                    type="text" value="{% if data['email'] %}{{ data['email']}} {% endif %}">
+                                    type="text" value="{% if data['email'] %}{{ data['email']}}{% endif %}">
                             </div>
 
                             <button class="nhsuk-button" type="submit">
