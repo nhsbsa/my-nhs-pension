@@ -65,11 +65,19 @@ My NHS Pension
                                     <li>
                                         <a href="#registrationCode">Enter your registration code</a>
                                     </li>
+                                    {% elif data['registrationCode'] | length !== 6 %}
+                                    <li>
+                                        <a href="#registrationCode">Enter a valid registration code</a>
+                                    </li>
                                     {% endif %}
 
                                     {% if data['pin'] === '' %}
                                     <li>
                                         <a href="#pin">Enter your personal identification code</a>
+                                    </li>
+                                    {% elif data['pin'] | length !== 8 %}
+                                    <li>
+                                        <a href="#pin">Enter a valid personal identification code</a>
                                     </li>
                                     {% endif %}
 
@@ -86,7 +94,7 @@ My NHS Pension
                         <form action="identification-details-check" method="post">
 
                             <div
-                                class="nhsuk-form-group {% if data['registrationCode'] === '' %}nhsuk-form-group--error{% endif %}">
+                                class="nhsuk-form-group {% if (data['registrationCode'] === '') or (data['registrationCode'] | length !== 6) %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="registrationCode">
                                     Registration code
                                 </label>
@@ -97,14 +105,18 @@ My NHS Pension
                                 <span class="nhsuk-error-message" id="name-error">
                                     <span class="nhsuk-u-visually-hidden">Error:</span> Enter your registration code
                                 </span>
+                                {% elif data['registrationCode'] | length !== 6 %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid registration code
+                                </span>
                                 {% endif %}
                                 <input
-                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if data['registrationCode'] === '' %}nhsuk-input--error{% endif %}"
+                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if (data['registrationCode'] === '') or (data['registrationCode'] | length !== 6) %}nhsuk-input--error{% endif %}"
                                     id="registrationCode" name="registrationCode" type="text"
-                                    value="{% if data['registrationCode'] %}{{ data['registrationCode']}} {% endif %}">
+                                    value="{% if data['registrationCode'] %}{{ data['registrationCode']}}{% endif %}">
                             </div>
 
-                            <div class="nhsuk-form-group {% if data['pin'] === '' %}nhsuk-form-group--error{% endif %}">
+                            <div class="nhsuk-form-group {% if (data['pin'] === '') or (data['pin'] | length !== 8) %}nhsuk-form-group--error{% endif %}">
                                 <label class="nhsuk-label" for="pin">
                                     Personal identification code
                                 </label>
@@ -116,11 +128,16 @@ My NHS Pension
                                     <span class="nhsuk-u-visually-hidden">Error:</span> Enter your personal
                                     identification code
                                 </span>
+                                {% elif data['pin'] | length !== 8 %}
+                                <span class="nhsuk-error-message" id="name-error">
+                                    <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid personal
+                                    identification code
+                                </span>
                                 {% endif %}
                                 <input
-                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if data['pin'] === '' %}nhsuk-input--error{% endif %}"
+                                    class="nhsuk-input nhsuk-u-width-three-quarters {% if (data['pin'] === '') or (data['pin'] | length !== 8) %}nhsuk-input--error{% endif %}"
                                     id="pin" name="pin" type="text"
-                                    value="{% if data['pin'] %}{{ data['pin']}} {% endif %}">
+                                    value="{% if data['pin'] %}{{ data['pin']}}{% endif %}">
                             </div>
 
                             <details class="nhsuk-details nhsuk-u-margin-bottom-9">

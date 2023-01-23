@@ -16,7 +16,7 @@ router.post('clear-data', function (req, res) {
 // Identification details //
 router.post([/identification-details-check/, /identification-details-check-error/], function (req,res) {
 
-  if(req.body.registrationCode === '' || req.body.pin === '') {
+  if(req.body.registrationCode.length !== 6 || req.body.pin.length !== 8) {
     res.redirect('identification-details-error');
   } else {
     res.redirect('personal-details');
