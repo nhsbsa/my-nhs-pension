@@ -1,0 +1,129 @@
+<!-- ADDING CUSTOM CSS - Add your custom CSS or Sass in /app/assets/sass/main.scss -->
+
+<!-- Extends the layout from /views/layout.html -->
+{% extends 'layout-mnp-full.html' %}
+<!-- 
+  In /views/layout.html you can:
+    - change the header and footer 
+    - add custom CSS and JavaScript
+-->
+
+<!-- Set the page title -->
+{% block pageTitle %}
+My NHS Pension
+{% endblock %}
+
+<!-- For adding a breadcrumb -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/breadcrumbs -->
+{% block beforeContent %}
+{% endblock %}
+
+<!-- For adding a back link -->
+<!-- Code examples can be found at https://service-manual.nhs.uk/design-system/components/back-link -->
+{% block outerContent %}
+{% endblock %}
+
+<!-- For adding page content -->
+<!-- Page layout code can be found at https://service-manual.nhs.uk/design-system/styles/layout -->
+{% block content %}
+<div class="nhsuk-grid-row">
+  <div class="nhsuk-grid-column-full">
+
+    <!-- Start of content -->
+
+    <div class="nhsuk-grid-row">
+      <div class="nhsuk-grid-column-one-third ">
+        <h2>New Customer</h2>
+        <p>Create an account today and get instant access to your pension benefit details.</p>
+        <a href="../stepper/before-you-start">
+        <button class="nhsuk-button nhsuk-button--secondary">
+          Create an account
+        </button>
+      </a>
+      </div>
+
+      <div class="nhsuk-grid-column-two-thirds mnp-border-left">
+        <h2>Registered Users</h2>
+        <div class="nhsuk-error-summary nhsuk-u-width-three-quarters"
+        aria-labelledby="error-summary-title" role="alert" tabindex="-1">
+        <h2 class="nhsuk-error-summary__title" id="error-summary-title">
+            There is a problem 
+        </h2>
+
+        <div class="nhsuk-error-summary__body">
+            <ul class="nhsuk-list nhsuk-error-summary__list">
+
+                {% if data['username'] === '' %}
+                <li>
+                    <a href="#username">Enter your username</a>
+                </li>
+                {% elif (data['username'] | length > 15) or (data['username'] === 'ASBSHN') %}
+                <li>
+                    <a href="#username">Enter a valid username</a>
+                </li>
+                {% endif %}
+
+                {% if data['password'] === '' %}
+                <li>
+                    <a href="#password">Enter your password</a>
+                </li>
+                {% elif data['password'] | length < 12 %}
+                <li>
+                    <a href="#password">Enter a valid password</a>
+                </li>
+                {% endif %}
+
+            </ul>
+        </div>
+    </div>
+        <p>Have an account? Sign in now.</p>
+        <form action="sign-in-check" method="post">
+
+            <div class="nhsuk-form-group {% if (data['username'] === '') or (data['username'] === 'ASBSHN') or (data['username'] | length > 15) %}nhsuk-form-group--error{% endif %}">
+            <label class="nhsuk-label" for="username">
+              Username
+            </label>
+            {% if data['username'] === '' %}
+            <span class="nhsuk-error-message" id="name-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter your username
+            </span>
+            {% elif (data['username'] | length > 15) or (data['username'] === 'ASBSHN') %}
+            <span class="nhsuk-error-message" id="name-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid username
+            </span>
+            {% endif %}
+            <input class="nhsuk-input nhsuk-input--width-20 {% if (data['username'] === '') or (data['username'] === 'ASBSHN') or (data['username'] | length > 15) %}nhsuk-input--error{% endif %}" id="username" name="username" type="text"
+            value="{% if data['username'] %}{{ data['username']}}{% endif %}">
+          </div>
+
+          <div class="nhsuk-form-group {% if (data['password'] === '') or (data['password'] | length < 12) %}nhsuk-form-group--error{% endif %}">
+            <label class="nhsuk-label" for="password">
+              Password
+            </label>
+            {% if data['password'] === '' %}
+            <span class="nhsuk-error-message" id="name-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter your password
+            </span>
+            {% elif data['password'] | length < 12 %}
+            <span class="nhsuk-error-message" id="name-error">
+                <span class="nhsuk-u-visually-hidden">Error:</span> Enter a valid password
+            </span>
+            {% endif %}
+            <input class="nhsuk-input nhsuk-input--width-20 {% if (data['password'] === '') or (data['password'] | length < 12) %}nhsuk-input--error{% endif %}" id="password" name="password" type="password"
+            value="{% if data['password'] %}{{ data['password']}}{% endif %}">
+          </div>
+          <button class="nhsuk-button" type="submit">
+            Sign in
+          </button>
+        </form>
+        <p><a href="">Forgot your username?</a><br />
+          <a href="">Forgot your password?</a></p>
+        
+      </div>
+    </div>
+
+    <!-- End of content -->
+
+  </div>
+</div>
+{% endblock %}

@@ -5,10 +5,10 @@ const router = express.Router();
 
 // Add your routes here - above the module.exports line 
 
-// Clear all data in session
-router.post('clear-data', function (req, res) {
+// Clear all data in session when starting a new registration
+router.post('/create-new-account', function (req, res) {
   req.session.data = {}
-  res.render('prototype-admin/clear-data-success')
+  res.redirect('identification-details')
 })
 
 // Error handling - registration
@@ -70,6 +70,16 @@ router.post('/2fa-setup-app-check', function (req,res) {
     res.redirect('2fa-setup-app-error');
   } else {
     res.redirect('2fa-setup-recovery-codes');
+  }
+})
+
+// Sign in //
+router.post('/sign-in-check', function (req,res) {
+
+  if(req.body.username.length > 15 || req.body.password.length < 12) {
+    res.redirect('sign-in-error');
+  } else {
+    res.redirect('registration/2fa-setup');
   }
 })
  
